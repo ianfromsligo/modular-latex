@@ -7,6 +7,15 @@
 \usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
 
+% Allow components to \input each other using repo-root-relative paths,
+% even though latexmk runs from output/. The build script emits paths for
+% top-level components; these search paths cover nested \input calls.
+\makeatletter
+\def\input@path{{../}{../components/}{../components/paragraphs/}{../components/equations/}{../components/subsections/}}
+\makeatother
+
+\graphicspath{{../}{../components/}{../components/figures/}{../components/figures/fig-architecture/}}
+
 \title{ {{- manifest.metadata.title -}} }
 \author{
 {%- for a in manifest.metadata.authors %}
