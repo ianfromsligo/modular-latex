@@ -45,7 +45,13 @@ def render(manifest: dict, output_dir: Path) -> str:
         trim_blocks=True,
         lstrip_blocks=True,
         keep_trailing_newline=True,
-    )
+        block_start_string="<%",
+        block_end_string="%>",
+        variable_start_string="<<",
+        variable_end_string=">>",
+        comment_start_string="<#",
+        comment_end_string="#>",
+    )	
     tmpl = env.get_template("template.tex.j2")
     return tmpl.render(
         manifest=manifest,
