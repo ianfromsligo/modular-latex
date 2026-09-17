@@ -59,9 +59,9 @@
 <%- if manifest.postlude %>
 <%- for section in manifest.postlude %>
 \section*{ <<- section.title ->> }
-<%- for comp in section.components %>
+<% for comp in section.components %>
 << emit(comp) >>
-<%- endfor %>
+<% endfor %>
 <%- endfor %>
 <%- endif %>
 
