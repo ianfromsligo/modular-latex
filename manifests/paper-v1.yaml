@@ -1,0 +1,26 @@
+template: article
+
+metadata:
+  title: "Modular LaTeX: A DevOps Approach to Document Assembly"
+  authors:
+    - name: Tony Feloni
+      email: tony.feloni@atu.ie
+      affiliation: University of Galway, Galway, Ireland
+    - name: Jane Smith
+      email: jane.smith@atu.ie
+      affiliation: University of Galway, Galway, Ireland
+  bibliography: refs.bib
+
+sections:
+  - title: Introduction
+    components:
+      - components/subsections/sub-motivation
+      - components/figures/fig-architecture
+
+  - title: Methods
+    components:
+      - components/equations/eq-gaussian
+
+  - title: Results
+    components:
+      - components/tables/tab-results

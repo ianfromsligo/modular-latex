@@ -1,0 +1,11 @@
+output/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+__pycache__/
+.venv/
