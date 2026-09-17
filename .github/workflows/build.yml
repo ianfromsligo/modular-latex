@@ -20,6 +20,11 @@ jobs:
       - name: Install Python deps
         run: pip install -r requirements.txt
 
+      - name: Generate figures
+        run: |
+          pip install matplotlib
+          python tools/make_architecture.py
+
       - name: Install LaTeX
         run: |
           sudo apt-get update
