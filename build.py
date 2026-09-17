@@ -28,6 +28,7 @@ ROOT = Path(__file__).parent.resolve()
 
 INPUT_RE = re.compile(r'\\input\{([^}]+)\}')
 INCLUDE_RE = re.compile(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}')
+FIGPATH_DEF_RE = re.compile(r'\\def\\figpath\{([^}]*)\}')
 
 
 def doc_name(manifest_path: Path) -> str:
@@ -81,39 +82,67 @@ def render(manifest: dict, output_dir: Path) -> str:
     )
 
 
-def inline_inputs(tex: str, seen: set | None = None) -> str:
-    """Recursively replace \\input{path} with the contents of path.tex."""
+def inline_inputs(tex: str, base: Path, seen: set | None = None) -> str:
+    """Recursively replace \\input{path} with the contents of path.tex.
+
+    Paths are resolved relative to `base`, which should be the directory
+    containing the .tex file being scanned. When a component is inlined,
+    its own nested \\input calls are resolved relative to that component's
+    directory.
+    """
     seen = seen or set()
 
     def repl(match):
         target = match.group(1)
-        candidate = (ROOT / target).with_suffix(".tex")
+        candidate = (base / target).with_suffix(".tex").resolve()
         if not candidate.exists():
             return match.group(0)
         if candidate in seen:
             return match.group(0)
         seen.add(candidate)
         body = candidate.read_text()
-        return inline_inputs(body, seen)
+        return inline_inputs(body, candidate.parent, seen)
 
     return INPUT_RE.sub(repl, tex)
 
 
+def expand_figpath(tex: str) -> str:
+    """Replace \\def\\figpath{X} ... \\figpath refs with X, and drop the def.
+
+    The assembler emits \\def\\figpath{<rel>} immediately before each
+    figure component. After inlining, the def precedes the inlined figure
+    body. This function walks the text and, for each def, rewrites the
+    \\figpath references in the block that follows it — matching what
+    LaTeX would do — then removes the def line itself.
+    """
+    out = []
+    pos = 0
+    for m in FIGPATH_DEF_RE.finditer(tex):
+        out.append(tex[pos:m.start()])
+        value = m.group(1)
+        # Find the next def, or end of string
+        next_def = tex.find(r'\def\figpath', m.end())
+        block_end = next_def if next_def != -1 else len(tex)
+        block = tex[m.end():block_end]
+        block = block.replace(r'\figpath/', value + '/')
+        block = block.replace(r'\figpath', value)
+        out.append(block)
+        pos = block_end
+    out.append(tex[pos:])
+    return "".join(out)
+
+
 def flatten_graphics(tex: str, out_dir: Path, base: Path) -> str:
     """Copy referenced images into out_dir and rewrite paths to bare filenames."""
-    search_prefixes = (
-        "",
-        "../",
-        "../components/",
-        "../components/figures/",
-        "components/",
-        "components/figures/",
-    )
-
     def repl(match):
         original = match.group(1)
-        for prefix in search_prefixes:
-            cand = (base / prefix / original).resolve()
+        candidates = [
+            (base / original).resolve(),
+            (ROOT / original).resolve(),
+            (base / ".." / original).resolve(),
+            (base / "../.." / original).resolve(),
+        ]
+        for cand in candidates:
             if cand.exists() and cand.is_file():
                 dst = out_dir / cand.name
                 shutil.copy(cand, dst)
@@ -124,16 +153,20 @@ def flatten_graphics(tex: str, out_dir: Path, base: Path) -> str:
 
 
 def write_overleaf_bundle(assembled_tex: str, out_dir: Path,
-                          manifest: dict, doc_dir: Path) -> None:
-    """Produce a single self-contained main.tex plus assets."""
+                          manifest: dict, assembled_tex_dir: Path) -> None:
+    """Produce a single self-contained main.tex plus assets.
+
+    `assembled_tex_dir` is the directory containing the assembled main.tex,
+    used as the base for resolving all \\input and \\includegraphics paths.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    flat = inline_inputs(assembled_tex)
-    flat = flatten_graphics(flat, out_dir, base=ROOT)
+    flat = inline_inputs(assembled_tex, base=assembled_tex_dir)
+    flat = expand_figpath(flat)
+    flat = flatten_graphics(flat, out_dir, base=assembled_tex_dir)
 
     (out_dir / "main.tex").write_text(flat)
 
-    # copy bib
     bib = manifest["metadata"].get("bibliography")
     if bib:
         src = ROOT / bib
@@ -157,9 +190,9 @@ def build(manifest_path: Path, output_dir: Path,
         shutil.copy(ROOT / bib, doc_out / Path(bib).name)
         print(f"[build] copied {bib}")
 
-    # Overleaf bundle (before compilation, so it's produced even if compile fails)
     if overleaf_dir is not None:
-        write_overleaf_bundle(tex, overleaf_dir / doc, manifest, manifest_path.parent)
+        write_overleaf_bundle(tex, overleaf_dir / doc, manifest,
+                              assembled_tex_dir=doc_out)
         print(f"[build] wrote overleaf bundle {overleaf_dir / doc}")
 
     if not compile_pdf:
