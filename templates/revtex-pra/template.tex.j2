@@ -1,0 +1,71 @@
+\documentclass[aps,pra,reprint,amsmath,amssymb,superscriptaddress]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{booktabs}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{remark}{Remark}
+
+% Search paths so components can use repo-root-relative \input paths
+\makeatletter
+\def\input@path{{../}{../components/}{../components/paragraphs/}{../components/equations/}{../components/tables/}{../components/figures/}}
+\makeatother
+\graphicspath{{../}{../components/}{../components/figures/}{../components/figures/fig-pipeline/}}
+
+\begin{document}
+
+\title{ <<- manifest.metadata.title ->> }
+<%- for a in manifest.metadata.authors %>
+\author{ <<- a.name ->> }
+<%- if a.email %>
+\email{ <<- a.email ->> }
+<%- endif %>
+<%- if a.affiliation %>
+\affiliation{ <<- a.affiliation ->> }
+<%- endif %>
+<%- endfor %>
+<%- if manifest.metadata.date %>
+\date{ <<- manifest.metadata.date ->> }
+<%- else %>
+\date{\today}
+<%- endif %>
+
+\begin{abstract}
+<<- manifest.metadata.abstract ->> 
+\end{abstract}
+
+\maketitle
+
+<%- if manifest.prelude %>
+<%- for section in manifest.prelude %>
+\section*{ <<- section.title ->> }
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+
+<%- for section in manifest.sections %>
+\section{\label{sec:<<- section.label ->>}<<- section.title ->>}
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+
+<%- if manifest.postlude %>
+<%- for section in manifest.postlude %>
+\section*{ <<- section.title ->> }
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+
+\bibliographystyle{ <<- manifest.metadata.bibliographystyle ->> }
+\bibliography{ <<- manifest.metadata.bibliography | replace('.bib','') | basename ->> }
+
+\end{document}

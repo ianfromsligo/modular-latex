@@ -1,4 +1,4 @@
-name: Build Document
+name: Build Documents
 
 "on":
   push:
@@ -7,40 +7,77 @@ name: Build Document
   workflow_dispatch: {}
 
 jobs:
-  build:
+  discover:
     runs-on: ubuntu-latest
+    outputs:
+      docs: ${{ steps.list.outputs.docs }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: list
+        run: |
+          docs=$(ls -d docs/*/ | xargs -n1 basename | grep -v '^archive$' | jq -R -s -c 'split("\n")[:-1]')
+          echo "docs=$docs" >> "$GITHUB_OUTPUT"
+          echo "discovered docs: $docs"
+
+  build:
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        doc: ${{ fromJson(needs.discover.outputs.docs) }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Python deps
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt matplotlib
 
-      - name: Generate figures
+      - name: Generate sample figure
+        run: python tools/make_sample_figure.py
+
+      - name: Assemble LaTeX + Overleaf bundle
         run: |
-          pip install matplotlib
-          python tools/make_architecture.py
+          python build.py docs/${{ matrix.doc }}/manifest.yaml \
+            -o output \
+            --overleaf overleaf \
+            --no-compile
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-base \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-bibtex-extra \
-            latexmk
+      - name: Compile PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: output/${{ matrix.doc }}
+          root_file: main.tex
+          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
 
-      - name: Build PDF
-        run: python build.py manifests/paper-v1.yaml -o output
+      - name: Show assembled main.tex (first 80 lines)
+        run: head -80 output/${{ matrix.doc }}/main.tex
 
-      - name: Upload PDF artifact
+      - name: Upload PDF (latest)
         uses: actions/upload-artifact@v4
         with:
-          name: paper-v1
-          path: output/main.pdf
+          name: ${{ matrix.doc }}-pdf
+          path: output/${{ matrix.doc }}/main.pdf
+          if-no-files-found: error
+
+      - name: Upload PDF (versioned)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.doc }}-pdf-${{ github.sha }}
+          path: output/${{ matrix.doc }}/main.pdf
+          retention-days: 90
+
+      - name: Upload assembled tex
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.doc }}-tex
+          path: output/${{ matrix.doc }}/main.tex
+
+      - name: Upload Overleaf bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.doc }}-overleaf
+          path: overleaf/${{ matrix.doc }}/

@@ -1,0 +1,44 @@
+template: revtex-pra
+
+metadata:
+  title: "Revivals on Toroidal Lattices: A Sample Document"
+  authors:
+    - name: Aoife Ní Bhriain
+      email: aoife.nibhriain@atu.ie
+      affiliation: Atlantic Technological University, Sligo, Ireland
+    - name: Declan O'Sullivan
+      affiliation: University of Galway, Galway, Ireland
+  abstract: >
+    We present a sample document in the REVTeX-PRA style, demonstrating
+    the modular-LaTeX build system. This file exists only to verify that
+    the template renders correctly; content will be replaced once the
+    infrastructure is confirmed. We include a theorem, a numbered
+    equation, a table, a figure, and a citation to exercise each path.
+  date: "1st June 2026"
+  bibliographystyle: apsrev4-2
+  bibliography: docs/sample-paper/references.bib
+
+sections:
+  - title: Introduction
+    label: intro
+    components:
+      - docs/sample-paper/components/paragraphs/intro-1
+      - docs/sample-paper/components/paragraphs/intro-2
+
+  - title: Theoretical Framework
+    label: theory
+    components:
+      - docs/sample-paper/components/equations/eq-general-evolution
+      - docs/sample-paper/components/theorems/thm-revival-set
+      - docs/sample-paper/components/paragraphs/theory-comment
+
+  - title: Results
+    label: results
+    components:
+      - docs/sample-paper/components/tables/tab-revival-periods
+      - docs/sample-paper/components/figures/fig-pipeline
+
+  - title: Conclusion
+    label: conclusion
+    components:
+      - docs/sample-paper/components/paragraphs/conclusion
