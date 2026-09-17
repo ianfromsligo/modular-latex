@@ -73,6 +73,7 @@ def render(manifest: dict, output_dir: Path) -> str:
         comment_start_string="<#",
         comment_end_string="#>",
     )
+    env.filters["basename"] = lambda p: os.path.basename(p)
     tmpl = env.get_template("template.tex.j2")
     return tmpl.render(
         manifest=manifest,
