@@ -17,24 +17,24 @@
 
 \title{ <<- manifest.metadata.title ->> }
 \author{
-<<- for a in manifest.metadata.authors >>
+<%- for a in manifest.metadata.authors %>
   << a.name >>\\
   \texttt{ <<- a.email ->> }\\
   << a.affiliation >>
-  <<- if not loop.last >> \and << endif >>
-<<- endfor >>
+  <%- if not loop.last %> \and <% endif %>
+<%- endfor %>
 }
 \date{\today}
 
 \begin{document}
 \maketitle
 
-<< for section in manifest.sections >>
+<% for section in manifest.sections %>
 \section{ <<- section.title ->> }
-<< for comp in section.components >>
+<% for comp in section.components %>
 << emit(comp) >>
-<< endfor >>
-<< endfor >>
+<% endfor %>
+<% endfor %>
 
 \bibliographystyle{plain}
 \bibliography{ <<- manifest.metadata.bibliography | replace('.bib','') ->> }
