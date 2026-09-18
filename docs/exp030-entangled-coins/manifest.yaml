@@ -5,6 +5,7 @@ metadata:
   subtitle: "Using Bell-State Entanglement Between x and y Directions"
   author:
     name: Ian Craig
+    email: ian.craig@atu.ie
   date: "1st June 2026"
   abstract: >
     This experiment investigates quantum state revivals on n x m tori
@@ -27,43 +28,43 @@ prelude:
 sections:
   - title: Introduction
     components:
-      - docs/exp030-entangled-coins/components/paragraphs/intro-1
-      - docs/exp030-entangled-coins/components/paragraphs/intro-2
+      - docs/exp030-entangled-coins/components/paragraphs/intro
 
   - title: Theory
     subsections:
       - title: Mapping Two Qubits to Four Directions
         components:
-          - docs/exp030-entangled-coins/components/paragraphs/theory-1-1
+          - docs/exp030-entangled-coins/components/paragraphs/theory-1-mapping
           - docs/exp030-entangled-coins/components/tables/tab-mapping
       - title: The Four Bell States
         components:
           - docs/exp030-entangled-coins/components/equations/eq-bell-states
       - title: The Critical Sign Difference
         components:
-          - docs/exp030-entangled-coins/components/paragraphs/theory-3-1
-          - docs/exp030-entangled-coins/components/equations/eq-sign-diff
+          - docs/exp030-entangled-coins/components/paragraphs/theory-3-sign
+          - docs/exp030-entangled-coins/components/equations/eq-sign-difference
       - title: Physical Interpretation
         components:
           - docs/exp030-entangled-coins/components/tables/tab-correlation
       - title: Entangled Coin Operator
         components:
-          - docs/exp030-entangled-coins/components/paragraphs/theory-5-1
+          - docs/exp030-entangled-coins/components/paragraphs/theory-5-operator
           - docs/exp030-entangled-coins/components/equations/eq-bell-operator
 
   - title: Results
     subsections:
-      - title: Complete Classification
+      - title: Complete Classification of Entangled Coin Revivals
         components:
           - docs/exp030-entangled-coins/components/paragraphs/results-1-1
           - docs/exp030-entangled-coins/components/tables/tab-revivals
           - docs/exp030-entangled-coins/components/paragraphs/results-1-2
-      - title: Comparison
+      - title: Comparison of Bell-State Revivals
         components:
-          - docs/exp030-entangled-coins/components/tables/tab-comparison
-      - title: All Coin Types
+          - docs/exp030-entangled-coins/components/tables/tab-bell-comparison
+      - title: Comparison of All Coin Types
         components:
           - docs/exp030-entangled-coins/components/tables/tab-all-coins
+          - docs/exp030-entangled-coins/components/paragraphs/results-3-1
 
   - title: Discussion
     subsections:
