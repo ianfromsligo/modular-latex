@@ -177,6 +177,7 @@ def write_overleaf_bundle(assembled_tex: str, out_dir: Path,
 def build(manifest_path: Path, output_dir: Path,
           compile_pdf: bool, overleaf_dir: Path | None) -> None:
     manifest = yaml.safe_load(manifest_path.read_text())
+    manifest["_doc_name"] = doc_name(manifest_path)
     doc = doc_name(manifest_path)
     doc_out = output_dir / doc
     doc_out.mkdir(parents=True, exist_ok=True)
