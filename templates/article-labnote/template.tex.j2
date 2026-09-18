@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{array}
+\usepackage{multirow}
+
+\definecolor{revival}{RGB}{34,139,34}
+\definecolor{entangled}{RGB}{70,130,180}
+\definecolor{star}{RGB}{255,165,0}
+
+% Search paths so components can use repo-root-relative \input paths
+\makeatletter
+\def\input@path{{../}{../docs/<<- manifest._doc_name ->>/components/}{../docs/<<- manifest._doc_name ->>/components/paragraphs/}{../docs/<<- manifest._doc_name ->>/components/equations/}{../docs/<<- manifest._doc_name ->>/components/tables/}{../docs/<<- manifest._doc_name ->>/components/figures/}}
+\makeatother
+\graphicspath{{../}{../docs/<<- manifest._doc_name ->>/components/figures/}}
+
+<%- if manifest.metadata.subtitle %>
+\title{ <<- manifest.metadata.title ->> \\
+       \large <<- manifest.metadata.subtitle ->> }
+<%- else %>
+\title{ <<- manifest.metadata.title ->> }
+<%- endif %>
+\author{ <<- manifest.metadata.author.name ->> }
+<%- if manifest.metadata.author.email %>
+\date{ <<- manifest.metadata.date ->> \\ \texttt{<<- manifest.metadata.author.email ->>} }
+<%- else %>
+\date{ <<- manifest.metadata.date ->> }
+<%- endif %>
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+<<- manifest.metadata.abstract >>
+\end{abstract}
+
+<%- if manifest.prelude %>
+<%- for section in manifest.prelude %>
+\section*{ <<- section.title ->> }
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+
+<%- for section in manifest.sections %>
+\section{ <<- section.title ->> }
+<%- if section.subsections %>
+<%- for sub in section.subsections %>
+\subsection{ <<- sub.title ->> }
+<%- for comp in sub.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+<%- if section.components %>
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endif %>
+<%- endfor %>
+
+<%- if manifest.postlude %>
+<%- for section in manifest.postlude %>
+\section*{ <<- section.title ->> }
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+
+<%- if manifest.metadata.bibliography %>
+\bibliographystyle{plain}
+\bibliography{ <<- manifest.metadata.bibliography | replace('.bib','') | basename ->> }
+<%- endif %>
+
+\end{document}

@@ -1,44 +1,62 @@
-template: revtex-pra
+template: article-sample
 
 metadata:
-  title: "Revivals on Toroidal Lattices: A Sample Document"
+  title: "A Sample Paper: Demonstration of the Modular LaTeX Pipeline"
   authors:
     - name: Aoife Ní Bhriain
       email: aoife.nibhriain@atu.ie
-      affiliation: Atlantic Technological University, Sligo, Ireland
+      affiliation: Atlantic Technological University, Sligo
     - name: Declan O'Sullivan
-      affiliation: University of Galway, Galway, Ireland
+      affiliation: University of Galway, Galway
+  date: "18th September 2026"
   abstract: >
-    We present a sample document in the REVTeX-PRA style, demonstrating
-    the modular-LaTeX build system. This file exists only to verify that
-    the template renders correctly; content will be replaced once the
-    infrastructure is confirmed. We include a theorem, a numbered
-    equation, a table, a figure, and a citation to exercise each path.
-  date: "1st June 2026"
-  bibliographystyle: apsrev4-2
+    This is a sample paper demonstrating the modular-LaTeX pipeline.
+    It contains three paragraphs of introduction, a theoretical framework
+    with two subsections and a figure, a results section with two tables
+    and a figure, a discussion with a table, a conclusion, and
+    acknowledgements. The document is assembled from components held under
+    docs/sample-paper/components/ by build.py, and compiled by continuous
+    integration on every push.
   bibliography: docs/sample-paper/references.bib
+
+acknowledgements: >
+  The authors thank their colleagues for helpful discussions, and
+  acknowledge the support of their respective institutions.
 
 sections:
   - title: Introduction
-    label: intro
     components:
       - docs/sample-paper/components/paragraphs/intro-1
       - docs/sample-paper/components/paragraphs/intro-2
+      - docs/sample-paper/components/paragraphs/intro-3
 
   - title: Theoretical Framework
-    label: theory
-    components:
-      - docs/sample-paper/components/equations/eq-general-evolution
-      - docs/sample-paper/components/theorems/thm-revival-set
-      - docs/sample-paper/components/paragraphs/theory-comment
+    subsections:
+      - title: First Subsection
+        components:
+          - docs/sample-paper/components/paragraphs/theory-1a
+          - docs/sample-paper/components/figures/fig-overview
+          - docs/sample-paper/components/paragraphs/theory-1b
+      - title: Second Subsection
+        components:
+          - docs/sample-paper/components/paragraphs/theory-2a
+          - docs/sample-paper/components/paragraphs/theory-2b
 
   - title: Results
-    label: results
     components:
-      - docs/sample-paper/components/tables/tab-revival-periods
-      - docs/sample-paper/components/figures/fig-pipeline
+      - docs/sample-paper/components/paragraphs/results-1
+      - docs/sample-paper/components/tables/tab-results-1
+      - docs/sample-paper/components/tables/tab-results-2
+      - docs/sample-paper/components/figures/fig-results
+      - docs/sample-paper/components/paragraphs/results-2
+
+  - title: Discussion of Results
+    components:
+      - docs/sample-paper/components/paragraphs/discussion-1
+      - docs/sample-paper/components/paragraphs/discussion-2
+      - docs/sample-paper/components/tables/tab-discussion
 
   - title: Conclusion
-    label: conclusion
     components:
-      - docs/sample-paper/components/paragraphs/conclusion
+      - docs/sample-paper/components/paragraphs/conclusion-1
+      - docs/sample-paper/components/paragraphs/conclusion-2

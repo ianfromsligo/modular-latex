@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+
+% Footer: primary author's email on every page
+\pagestyle{fancy}
+\fancyhf{}
+<%- if manifest.metadata.authors[0].email %>
+\fancyfoot[L]{\texttt{<<- manifest.metadata.authors[0].email ->>}}
+<%- endif %>
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Search paths so components can use repo-root-relative \input paths
+\makeatletter
+\def\input@path{{../}{../docs/<<- manifest._doc_name ->>/components/}{../docs/<<- manifest._doc_name ->>/components/paragraphs/}{../docs/<<- manifest._doc_name ->>/components/equations/}{../docs/<<- manifest._doc_name ->>/components/tables/}{../docs/<<- manifest._doc_name ->>/components/figures/}}
+\makeatother
+\graphicspath{{../}{../docs/<<- manifest._doc_name ->>/components/figures/}}
+
+\title{ <<- manifest.metadata.title ->> }
+\author{
+<%- for a in manifest.metadata.authors %>
+  << a.name >>
+  <%- if a.email %>
+  \\ \texttt{<< a.email >>}
+  <%- endif %>
+  <%- if a.affiliation %>
+  \\ \small << a.affiliation >>
+  <%- endif %>
+  <%- if not loop.last %> \\[0.8em] \and <%- endif %>
+<%- endfor %>
+}
+\date{ <<- manifest.metadata.date ->> }
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+<<- manifest.metadata.abstract >>
+\end{abstract}
+
+<%- for section in manifest.sections %>
+\section{ <<- section.title ->> }
+<%- if section.subsections %>
+<%- for sub in section.subsections %>
+\subsection{ <<- sub.title ->> }
+<%- for comp in sub.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+<%- if section.components %>
+<%- for comp in section.components %>
+<< emit(comp) >>
+<%- endfor %>
+<%- endif %>
+<%- endfor %>
+
+<%- if manifest.acknowledgements %>
+\section*{Acknowledgements}
+<<- manifest.acknowledgements >>
+<%- endif %>
+
+\bibliographystyle{plain}
+\bibliography{ <<- manifest.metadata.bibliography | replace('.bib','') | basename ->> }
+
+\end{document}

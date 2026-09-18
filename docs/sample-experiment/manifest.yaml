@@ -1,0 +1,67 @@
+template: article-labnote
+
+metadata:
+  title: "EXP099: A Sample Experiment Log"
+  subtitle: "Demonstrating the informal record-document template"
+  author:
+    name: Ian Craig
+  date: "18th September 2026"
+  abstract: >
+    This is a sample experiment log, demonstrating the article-labnote
+    template. Unlike a formal paper, this is a record document: it
+    records what was done, what was found, and what remains to be
+    investigated. It contains a revision history, an introduction, a
+    theory section with subsections, a method section, results with
+    tables and a figure, a discussion, a conclusion, and a code
+    availability section.
+  bibliography: docs/sample-experiment/references.bib
+
+prelude:
+  - title: Revision History
+    components:
+      - docs/sample-experiment/components/tables/revision-history
+
+sections:
+  - title: Introduction
+    components:
+      - docs/sample-experiment/components/paragraphs/intro-1
+      - docs/sample-experiment/components/paragraphs/intro-2
+
+  - title: Theory
+    subsections:
+      - title: Entangled Coins
+        components:
+          - docs/sample-experiment/components/paragraphs/theory-1a
+          - docs/sample-experiment/components/equations/eq-bell-states
+          - docs/sample-experiment/components/paragraphs/theory-1b
+      - title: Sign Structure
+        components:
+          - docs/sample-experiment/components/paragraphs/theory-2a
+          - docs/sample-experiment/components/tables/tab-correlation
+
+  - title: Method
+    components:
+      - docs/sample-experiment/components/paragraphs/method-1
+      - docs/sample-experiment/components/paragraphs/method-2
+
+  - title: Results
+    components:
+      - docs/sample-experiment/components/paragraphs/results-1
+      - docs/sample-experiment/components/tables/tab-revivals
+      - docs/sample-experiment/components/figures/fig-revival-plot
+      - docs/sample-experiment/components/paragraphs/results-2
+      - docs/sample-experiment/components/tables/tab-all-coins
+
+  - title: Discussion
+    components:
+      - docs/sample-experiment/components/paragraphs/discussion-1
+      - docs/sample-experiment/components/paragraphs/discussion-2
+
+  - title: Conclusion
+    components:
+      - docs/sample-experiment/components/paragraphs/conclusion
+
+postlude:
+  - title: Code Availability
+    components:
+      - docs/sample-experiment/components/paragraphs/code-availability

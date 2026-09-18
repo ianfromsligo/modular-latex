@@ -11,3 +11,6 @@ overleaf/
 __pycache__/
 .venv/
 .DS_Store
+docs/sample-paper/components/figures/fig-overview/overview.png
+docs/sample-paper/components/figures/fig-results/results.png
+docs/sample-experiment/components/figures/fig-revival-plot/revival-plot.png
