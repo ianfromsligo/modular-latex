@@ -1,0 +1,84 @@
+template: article-labnote
+
+metadata:
+  title: "EXP030: Entangled Coin Quantum Walks on Tori"
+  subtitle: "Using Bell-State Entanglement Between x and y Directions"
+  author:
+    name: Ian Craig
+  date: "1st June 2026"
+  abstract: >
+    This experiment investigates quantum state revivals on n x m tori
+    using entangled coins based on Bell states. Unlike separable coins
+    (where x and y motions are independent) or Grover-like coins (which
+    mix all four directions equally), Bell-state coins create maximal
+    entanglement between the x and y directions. Key discovery: the
+    Phi-minus Bell state on the 2x2 torus produces revivals at all
+    multiples of 8. The Phi-plus, Psi-plus, and Psi-minus states produce
+    revivals at multiples of 24 - three times slower. The only difference
+    between Phi-minus and Phi-plus is a relative minus sign, yet this
+    changes the revival period by a factor of 3.
+  bibliography: docs/exp030-entangled-coins/references.bib
+
+prelude:
+  - title: Revision History
+    components:
+      - docs/exp030-entangled-coins/components/tables/revision-history
+
+sections:
+  - title: Introduction
+    components:
+      - docs/exp030-entangled-coins/components/paragraphs/intro-1
+      - docs/exp030-entangled-coins/components/paragraphs/intro-2
+
+  - title: Theory
+    subsections:
+      - title: Mapping Two Qubits to Four Directions
+        components:
+          - docs/exp030-entangled-coins/components/paragraphs/theory-1-1
+          - docs/exp030-entangled-coins/components/tables/tab-mapping
+      - title: The Four Bell States
+        components:
+          - docs/exp030-entangled-coins/components/equations/eq-bell-states
+      - title: The Critical Sign Difference
+        components:
+          - docs/exp030-entangled-coins/components/paragraphs/theory-3-1
+          - docs/exp030-entangled-coins/components/equations/eq-sign-diff
+      - title: Physical Interpretation
+        components:
+          - docs/exp030-entangled-coins/components/tables/tab-correlation
+      - title: Entangled Coin Operator
+        components:
+          - docs/exp030-entangled-coins/components/paragraphs/theory-5-1
+          - docs/exp030-entangled-coins/components/equations/eq-bell-operator
+
+  - title: Results
+    subsections:
+      - title: Complete Classification
+        components:
+          - docs/exp030-entangled-coins/components/paragraphs/results-1-1
+          - docs/exp030-entangled-coins/components/tables/tab-revivals
+          - docs/exp030-entangled-coins/components/paragraphs/results-1-2
+      - title: Comparison
+        components:
+          - docs/exp030-entangled-coins/components/tables/tab-comparison
+      - title: All Coin Types
+        components:
+          - docs/exp030-entangled-coins/components/tables/tab-all-coins
+
+  - title: Discussion
+    subsections:
+      - title: The Role of the Sign
+        components:
+          - docs/exp030-entangled-coins/components/paragraphs/disc-1-1
+      - title: Limitations
+        components:
+          - docs/exp030-entangled-coins/components/paragraphs/disc-2-1
+
+  - title: Conclusion
+    components:
+      - docs/exp030-entangled-coins/components/paragraphs/conclusion
+
+postlude:
+  - title: Code Availability
+    components:
+      - docs/exp030-entangled-coins/components/paragraphs/code-availability
