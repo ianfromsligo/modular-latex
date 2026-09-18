@@ -1,20 +1,35 @@
-\documentclass[13pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\documentclass[aps,pra,reprint,amsmath,amssymb,superscriptaddress,floatfix]{revtex4-2}
 \usepackage{graphicx}
-\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{bm}
 \usepackage{hyperref}
-\usepackage[margin=1in]{geometry}
-\usepackage{xcolor}
-\usepackage{float}
-\usepackage{array}
-\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
 
-\definecolor{revival}{RGB}{34,139,34}
-\definecolor{entangled}{RGB}{70,130,180}
-\definecolor{star}{RGB}{255,165,0}
+\pdfstringdefDisableCommands{%
+  \def\frac#1#2{#1/#2}%
+  \def\times{x}%
+  \def\rho{r}%
+  \def\approx{~}%
+  \def\sqrt#1{sqrt(#1)}%
+  \def\bigl{}%
+  \def\bigr{}%
+}
+
+\pdfstringdefDisableCommands{%
+  \def\frac#1#2{#1/#2}%
+  \def\times{x}%
+  \def\rho{r}%
+  \def\approx{~}%
+  \def\sqrt#1{sqrt(#1)}%
+  \def\bigl{}%
+  \def\bigr{}%
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{remark}{Remark}
 
 % Search paths so components can use repo-root-relative \input paths
 \makeatletter
@@ -22,51 +37,56 @@
 \makeatother
 \graphicspath{{../}{../docs/<<- manifest._doc_name ->>/components/figures/}}
 
-<%- if manifest.metadata.subtitle %>
-\title{<< manifest.metadata.title >> \\
-       \large << manifest.metadata.subtitle >>}
-<%- else %>
-\title{<< manifest.metadata.title >>}
-<%- endif %>
-\author{ <<- manifest.metadata.author.name ->> }
-<%- if manifest.metadata.author.email %>
-\date{ <<- manifest.metadata.date ->> \\ \texttt{<<- manifest.metadata.author.email ->>} }
-<%- else %>
-\date{ <<- manifest.metadata.date ->> }
-<%- endif %>
-
 \begin{document}
 
-\maketitle
+\title{ <<- manifest.metadata.title ->> }
+<%- for a in manifest.metadata.authors %>
+\author{ <<- a.name ->> }
+<%- if a.email %>
+\email[Contact author: ]{ <<- a.email ->> }
+<%- endif %>
+<%- if a.affiliation %>
+\affiliation{ <<- a.affiliation ->> }
+<%- endif %>
+<%- endfor %>
+<%- if manifest.metadata.date == "today" %>
+\date{\today}
+<%- elif manifest.metadata.date %>
+\date{ <<- manifest.metadata.date ->> }
+<%- else %>
+\date{\today}
+<%- endif %>
 
 \begin{abstract}
 <<- manifest.metadata.abstract >>
 \end{abstract}
 
+\maketitle
+
 <%- if manifest.prelude %>
 <%- for section in manifest.prelude %>
 \section*{ <<- section.title ->> }
 <%- for comp in section.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>
 
 <%- endfor %>
 <%- endfor %>
 <%- endif %>
 
 <%- for section in manifest.sections %>
-\section{ <<- section.title ->> }
+\section{\label{sec:<<- section.label ->>}<<- section.title ->>}
 <%- if section.subsections %>
 <%- for sub in section.subsections %>
 \subsection{ <<- sub.title ->> }
 <%- for comp in sub.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>
 
 <%- endfor %>
 <%- endfor %>
 <%- endif %>
 <%- if section.components %>
 <%- for comp in section.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>
 
 <%- endfor %>
 <%- endif %>
@@ -76,15 +96,13 @@
 <%- for section in manifest.postlude %>
 \section*{ <<- section.title ->> }
 <%- for comp in section.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>
 
 <%- endfor %>
 <%- endfor %>
 <%- endif %>
 
-<%- if manifest.metadata.bibliography %>
-\bibliographystyle{plain}
+\bibliographystyle{ <<- manifest.metadata.bibliographystyle ->> }
 \bibliography{ <<- manifest.metadata.bibliography | replace('.bib','') | basename ->> }
-<%- endif %>
 
 \end{document}
