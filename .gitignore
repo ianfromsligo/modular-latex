@@ -11,3 +11,5 @@ overleaf/
 __pycache__/
 .venv/
 .DS_Store
+docs/*/components/figures/**/*.png
+docs/*/components/figures/**/*.pdf
