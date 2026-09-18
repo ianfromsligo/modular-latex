@@ -13,19 +13,25 @@ metadata:
     separable discrete-time quantum walks on $k \times m$ toroidal
     lattices. To achieve this, we first prove that a 2D torus exhibits
     full-state revivals if and only if both spatial dimensions belong to
-    the 1D revival set $\{2, 3, 4, 5, 6, 8, 10\}$ and share a common
-    revival step count up to a global phase ($N_k \cap N_m \neq
-    \emptyset$). We then establish predicted results based on the work
-    of Dukes on 1D cycles and publish our experimental results showing
-    all possible full-state revivals for $k \times m$ toroidal lattices.
-    In addition, we noted two phenomena not found in the single
-    dimension: multi-period revivals, where full-state revivals occur
-    across multiple distinct step counts depending on the coin settings,
-    and mixed-$\delta$ asymmetry, where revivals occur under coin phase
-    parameters along orthogonal axes ($\delta_x \neq \delta_y$). The
-    output of this paper provides a full classification of full-state
-    revivals given the parameters of the coin and may provide for
-    applications in state-routing and quantum memory architectures.
+    the 1D revival set $\{2, 3, 4, 5, 6, 8, 10\}$ and their respective
+    revival period sets share a common element, $N_k \cap N_m \neq
+    \emptyset$ (the revival holding up to a global phase). We then
+    establish predicted results based on the work of Dukes on 1D cycles,
+    and report a computational search that enumerates all full-state
+    revivals for $k \times m$ toroidal lattices with dimensions in the
+    revival set. In this process we note three phenomena occurring with
+    the 2D lattices. Multi-period revivals on the same torus size, where
+    full-state revivals occur across multiple distinct step counts
+    depending on the coin parameters; mixed-$\rho$ parameters for the
+    same torus, which can also result in revivals; and mixed-$\delta$
+    asymmetry, where revivals occur under coin phase parameters along
+    the two axes ($\delta_x \neq \delta_y$). Most strikingly, the longest
+    revival period, $T = 60$, occurs on the smallest prime torus,
+    $5 \times 5$, inverting the classical intuition that larger state
+    spaces recur more slowly. The output of this paper provides a full
+    classification of full-state revivals given the parameters of the
+    coin, and may find applications in quantum memory and in structures
+    such as frequency dividers and counters.
   date: "today"
   bibliographystyle: apsrev4-2
   bibliography: docs/sep-coin-tori/references.bib
