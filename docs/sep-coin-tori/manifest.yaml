@@ -1,120 +1,157 @@
 template: revtex-pra
-metadata:
-  title: Complete Classification of Full State Revivals on Separable Quantum Walks on Tori
-  authors:
-  - name: Ian Craig
-    email: ian.craig@atu.ie
-    affiliation: Atlantic Technological University, Sligo, Ireland
-  - name: Michael McGetterick
-    affiliation: University of Galway, Galway, Ireland
-  abstract: 'We present a complete classification of full-state revivals for separable discrete-time quantum walks on $k \times m$ toroidal lattices. To achieve this, we first prove that a 2D torus exhibits full-state revivals if and only if both spatial dimensions belong to the 1D revival set $\{2, 3, 4, 5, 6, 8, 10\}$ and their respective revival period sets share a common element, $N_k \cap N_m \neq \emptyset$ (the revival holding up to a global phase). We then establish predicted results based on the work of Dukes on 1D cycles, and report a computational search that enumerates all full-state revivals for $k \times m$ toroidal lattices with dimensions in the revival set. In this process we note three phenomena occurring with the 2D lattices. Multi-period revivals on the same torus size, where full-state revivals occur across multiple distinct step counts depending on the coin parameters; mixed-$\rho$ parameters for the same torus, which can also result in revivals; and mixed-$\delta$
-    asymmetry, where revivals occur under coin phase parameters along the two axes ($\delta_x \neq \delta_y$). Most strikingly, the longest revival period, $T = 60$, occurs on the smallest prime torus, $5 \times 5$, inverting the classical intuition that larger state spaces recur more slowly. The output of this paper provides a full classification of full-state revivals given the parameters of the coin, and may find applications in quantum memory and in structures such as frequency dividers and counters.
 
-    '
-  date: today
+metadata:
+  title: "Complete Classification of Full State Revivals on Separable Quantum Walks on Tori"
+  authors:
+    - name: Ian Craig
+      email: ian.craig@atu.ie
+      affiliation: Atlantic Technological University, Sligo, Ireland
+    - name: Michael McGetterick
+      affiliation: University of Galway, Galway, Ireland
+  abstract: >
+    We present a complete classification of full-state revivals for
+    separable discrete-time quantum walks on $k \times m$ toroidal
+    lattices. To achieve this, we first prove that a 2D torus exhibits
+    full-state revivals if and only if both spatial dimensions belong to
+    the 1D revival set $\{2, 3, 4, 5, 6, 8, 10\}$ and their respective
+    revival period sets share a common element, $N_k \cap N_m \neq
+    \emptyset$ (the revival holding up to a global phase). We then
+    establish predicted results based on the work of Dukes on 1D cycles,
+    and report a computational search that enumerates all full-state
+    revivals for $k \times m$ toroidal lattices with dimensions in the
+    revival set. In this process we note three phenomena occurring with
+    the 2D lattices. Multi-period revivals on the same torus size, where
+    full-state revivals occur across multiple distinct step counts
+    depending on the coin parameters; mixed-$\rho$ parameters for the
+    same torus, which can also result in revivals; and mixed-$\delta$
+    asymmetry, where revivals occur under coin phase parameters along
+    the two axes ($\delta_x \neq \delta_y$). Most strikingly, the longest
+    revival period, $T = 60$, occurs on the smallest prime torus,
+    $5 \times 5$, inverting the classical intuition that larger state
+    spaces recur more slowly. The output of this paper provides a full
+    classification of full-state revivals given the parameters of the
+    coin, and may find applications in quantum memory and in structures
+    such as frequency dividers and counters.
+  date: "today"
   bibliographystyle: apsrev4-2
   bibliography: docs/sep-coin-tori/references.bib
+
 sections:
-- title: Introduction
-  label: intro
-  components:
-  - docs/sep-coin-tori/components/paragraphs/intro-1
-  - docs/sep-coin-tori/components/paragraphs/intro-2
-  - docs/sep-coin-tori/components/paragraphs/intro-3
-  - docs/sep-coin-tori/components/paragraphs/intro-4
-- title: Theoretical Framework
-  label: theory
-  subsections:
-  - title: Separable coin walk on a Torus
+  - title: Introduction
+    label: intro
     components:
-    - docs/sep-coin-tori/components/paragraphs/theory-1-1
-    - docs/sep-coin-tori/components/equations/eq-general-evolution
-    - docs/sep-coin-tori/components/paragraphs/theory-1-2
-    - docs/sep-coin-tori/components/equations/eq-1d-coin
-    - docs/sep-coin-tori/components/equations/eq-hadamard-coin
-    - docs/sep-coin-tori/components/paragraphs/theory-1-3
-    - docs/sep-coin-tori/components/equations/eq-basis-order
-    - docs/sep-coin-tori/components/paragraphs/theory-1-4
-    - docs/sep-coin-tori/components/equations/eq-full-4x4-coin-matrix
-    - docs/sep-coin-tori/components/paragraphs/theory-1-5
-    - docs/sep-coin-tori/components/equations/eq-shift-x
-    - docs/sep-coin-tori/components/equations/eq-shift-y
-    - docs/sep-coin-tori/components/paragraphs/theory-1-6
-    - docs/sep-coin-tori/components/equations/eq-factorised-unitary
-    - docs/sep-coin-tori/components/paragraphs/theory-1-7
-  - title: The Mechanics of a Separable Walk on a Torus
+      - docs/sep-coin-tori/components/paragraphs/intro-1
+      - docs/sep-coin-tori/components/paragraphs/intro-2
+      - docs/sep-coin-tori/components/paragraphs/intro-3
+      - docs/sep-coin-tori/components/paragraphs/intro-4
+
+  - title: Theoretical Framework
+    label: theory
+    subsections:
+      - title: Separable coin walk on a Torus
+        components:
+          - docs/sep-coin-tori/components/paragraphs/theory-1-1
+          - docs/sep-coin-tori/components/equations/eq-general-evolution
+          - docs/sep-coin-tori/components/paragraphs/theory-1-2
+          - docs/sep-coin-tori/components/equations/eq-1d-coin
+          - docs/sep-coin-tori/components/equations/eq-hadamard-coin
+          - docs/sep-coin-tori/components/paragraphs/theory-1-3
+          - docs/sep-coin-tori/components/equations/eq-basis-order
+          - docs/sep-coin-tori/components/paragraphs/theory-1-4
+          - docs/sep-coin-tori/components/equations/eq-full-4x4-coin-matrix
+          - docs/sep-coin-tori/components/paragraphs/theory-1-5
+          - docs/sep-coin-tori/components/equations/eq-shift-x
+          - docs/sep-coin-tori/components/equations/eq-shift-y
+          - docs/sep-coin-tori/components/paragraphs/theory-1-6
+          - docs/sep-coin-tori/components/equations/eq-factorised-unitary
+          - docs/sep-coin-tori/components/paragraphs/theory-1-7
+
+      - title: The Mechanics of a Separable Walk on a Torus
+        components:
+          - docs/sep-coin-tori/components/paragraphs/theory-1-8-worked-step
+          - docs/sep-coin-tori/components/figures/fig-one-step
+
+      - title: Non-existence Theorem for $k=7,9$ and $k>10$
+        components:
+          - docs/sep-coin-tori/components/paragraphs/theory-2-1
+          - docs/sep-coin-tori/components/paragraphs/theory-2-2
+          - docs/sep-coin-tori/components/theorems/thm-revival-set
+          - docs/sep-coin-tori/components/theorems/proof-revival-set
+          - docs/sep-coin-tori/components/theorems/cor-revival-tori
+          - docs/sep-coin-tori/components/theorems/proof-corollary
+
+  - title: Experimental Results
+    label: results
     components:
-    - docs/sep-coin-tori/components/paragraphs/theory-1-8-worked-step
-    - docs/sep-coin-tori/components/figures/fig-one-step
-  - title: Non-existence Theorem for $k=7,9$ and $k>10$
+      - docs/sep-coin-tori/components/paragraphs/results-1
+      - docs/sep-coin-tori/components/tables/tab-period-count
+      - docs/sep-coin-tori/components/tables/tab-torus-period
+      - docs/sep-coin-tori/components/tables/tab-rho-by-period
+      - docs/sep-coin-tori/components/tables/tab-delta-by-period
+      - docs/sep-coin-tori/components/tables/tab-complete-phase
+      - docs/sep-coin-tori/components/tables/tab-max-period
+      - docs/sep-coin-tori/components/paragraphs/results-2
+
+  - title: Discussion
+    label: discussion
+    subsections:
+      - title: Specific Observations
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-1-1
+          - docs/sep-coin-tori/components/paragraphs/disc-1-2-n2
+          - docs/sep-coin-tori/components/paragraphs/disc-1-3-n8
+          - docs/sep-coin-tori/components/tables/tab-period8
+          - docs/sep-coin-tori/components/paragraphs/disc-1-4-n12
+          - docs/sep-coin-tori/components/paragraphs/disc-1-5-n16
+          - docs/sep-coin-tori/components/paragraphs/disc-1-6-n20
+          - docs/sep-coin-tori/components/paragraphs/disc-1-7-n24
+          - docs/sep-coin-tori/components/paragraphs/disc-1-8-n30
+
+      - title: N=60 Families
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-2-1
+
+      - title: Most Significant Observation
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-3-1
+          - docs/sep-coin-tori/components/tables/tab-period60
+          - docs/sep-coin-tori/components/paragraphs/disc-3-2
+
+      - title: Complete Phase Families
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-4-1
+          - docs/sep-coin-tori/components/tables/tab-complete-phase-disc
+
+      - title: Violation of No-Go Theorem
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-5-1
+          - docs/sep-coin-tori/components/tables/tab-violations
+
+      - title: Torus Size Inversely Controls Maximum Period
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-6-1
+          - docs/sep-coin-tori/components/tables/tab-max-period-disc
+
+      - title: Algebraic Structure
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-7-1
+          - docs/sep-coin-tori/components/tables/tab-algebraic
+
+      - title: Phase Quantisation
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-8-1
+          - docs/sep-coin-tori/components/tables/tab-phase-quant
+
+      - title: Comparison with Dukes (2014)
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-9-1
+
+      - title: Summary of Open Questions
+        components:
+          - docs/sep-coin-tori/components/paragraphs/disc-10-1
+
+  - title: Conclusion
+    label: conclusion
     components:
-    - docs/sep-coin-tori/components/paragraphs/theory-2-1
-    - docs/sep-coin-tori/components/paragraphs/theory-2-2
-    - docs/sep-coin-tori/components/theorems/thm-revival-set
-    - docs/sep-coin-tori/components/theorems/proof-revival-set
-    - docs/sep-coin-tori/components/theorems/cor-revival-tori
-    - docs/sep-coin-tori/components/theorems/proof-corollary
-- title: Experimental Results
-  label: results
-  components:
-  - docs/sep-coin-tori/components/paragraphs/results-1
-  - docs/sep-coin-tori/components/tables/tab-period-count
-  - docs/sep-coin-tori/components/tables/tab-torus-period
-  - docs/sep-coin-tori/components/tables/tab-rho-by-period
-  - docs/sep-coin-tori/components/tables/tab-delta-by-period
-  - docs/sep-coin-tori/components/tables/tab-complete-phase
-  - docs/sep-coin-tori/components/tables/tab-max-period
-  - docs/sep-coin-tori/components/paragraphs/results-2
-- title: Discussion
-  label: discussion
-  subsections:
-  - title: Specific Observations
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-1-1
-    - docs/sep-coin-tori/components/paragraphs/disc-1-2-n2
-    - docs/sep-coin-tori/components/paragraphs/disc-1-3-n8
-    - docs/sep-coin-tori/components/tables/tab-period8
-    - docs/sep-coin-tori/components/paragraphs/disc-1-4-n12
-    - docs/sep-coin-tori/components/paragraphs/disc-1-5-n16
-    - docs/sep-coin-tori/components/paragraphs/disc-1-6-n20
-    - docs/sep-coin-tori/components/paragraphs/disc-1-7-n24
-    - docs/sep-coin-tori/components/paragraphs/disc-1-8-n30
-  - title: N=60 Families
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-2-1
-  - title: Most Significant Observation
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-3-1
-    - docs/sep-coin-tori/components/tables/tab-period60
-    - docs/sep-coin-tori/components/paragraphs/disc-3-2
-  - title: Complete Phase Families
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-4-1
-    - docs/sep-coin-tori/components/tables/tab-complete-phase-disc
-  - title: Violation of No-Go Theorem
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-5-1
-    - docs/sep-coin-tori/components/tables/tab-violations
-  - title: Torus Size Inversely Controls Maximum Period
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-6-1
-    - docs/sep-coin-tori/components/tables/tab-max-period-disc
-  - title: Algebraic Structure
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-7-1
-    - docs/sep-coin-tori/components/tables/tab-algebraic
-  - title: Phase Quantisation
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-8-1
-    - docs/sep-coin-tori/components/tables/tab-phase-quant
-  - title: Comparison with Dukes (2014)
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-9-1
-  - title: Summary of Open Questions
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-10-1
-- title: Conclusion
-  label: conclusion
-  components:
-  - docs/sep-coin-tori/components/paragraphs/conclusion
-  - docs/sep-coin-tori/components/paragraphs/acknowledgments
+      - docs/sep-coin-tori/components/paragraphs/conclusion
+      - docs/sep-coin-tori/components/paragraphs/acknowledgments

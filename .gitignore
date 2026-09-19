@@ -13,3 +13,4 @@ __pycache__/
 .DS_Store
 docs/*/components/figures/**/*.png
 docs/*/components/figures/**/*.pdf
+docs/sep-coin-tori/components/figures/fig-one-step/one-step.png
