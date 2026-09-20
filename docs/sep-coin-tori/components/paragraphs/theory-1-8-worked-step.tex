@@ -1,10 +1,8 @@
-As a concrete illustration of the general formalism, consider a single
-step of the separable walk on a $3 \times 3$ torus with $\rho_x =
-\rho_y = 2/3$ and $\delta_x = \delta_y = 0$. Take the walker initially
-localised at the origin with coin state $|RU\rangle = |R\rangle \otimes
-|U\rangle$ --- that is, moving in the positive direction along both axes.
-
-The coin operator acts first. Each single-axis coin is
+To illustrate the separable walk, we evaluate a single step
+on a $3 \times 3$ torus with $\rho_x = \rho_y = 2/3$ and
+$\delta_x = \delta_y = 0$. The walker begins at the origin in coin
+state $|RU\rangle = |R\rangle \otimes |U\rangle$. The single-axis coin
+operator is
 \begin{equation}
 C\!\left(\tfrac{2}{3}, 0\right)
 = \begin{pmatrix}
@@ -14,12 +12,13 @@ C\!\left(\tfrac{2}{3}, 0\right)
 \label{eq:coin-2-3}
 \end{equation}
 acting on the basis $\{|\text{negative}\rangle, |\text{positive}\rangle\}$
-along each axis. Acting on the initial coin state:
+along each axis. Its action on the initial state is
 \begin{align}
 C_x |R\rangle &= \sqrt{1/3}\,|L\rangle - \sqrt{2/3}\,|R\rangle, \\
-C_y |U\rangle &= \sqrt{1/3}\,|D\rangle - \sqrt{2/3}\,|U\rangle.
+C_y |U\rangle &= \sqrt{1/3}\,|D\rangle - \sqrt{2/3}\,|U\rangle,
 \end{align}
-Taking the tensor product $C_x \otimes C_y$ gives the post-coin state
+so that the tensor product $C_x \otimes C_y$ produces the post-coin
+superposition
 \begin{equation}
 (C_x \otimes C_y)|RU\rangle
 = \tfrac{1}{3}|LD\rangle - \tfrac{\sqrt{2}}{3}|LU\rangle
@@ -27,16 +26,16 @@ Taking the tensor product $C_x \otimes C_y$ gives the post-coin state
 \label{eq:post-coin}
 \end{equation}
 
-The conditional shift $S = S_x S_y$ then moves each branch by one site
-along each axis, in the direction indicated by the coin state. On the
-$3 \times 3$ torus, the four destinations are
+The conditional shift $S = S_x S_y$ then displaces each branch by one
+site in the direction indicated by the coin state, mapping the four
+basis states on the $3 \times 3$ torus as
 \begin{align}
 |LD\rangle &: (x,y) \to (2, 2), \\
 |LU\rangle &: (x,y) \to (2, 1), \\
 |RD\rangle &: (x,y) \to (1, 2), \\
 |RU\rangle &: (x,y) \to (1, 1).
 \end{align}
-The state after one full step is therefore
+The resulting state
 \begin{equation}
 |\psi_1\rangle
 = \tfrac{1}{3}|2,2\rangle|LD\rangle
@@ -45,15 +44,18 @@ The state after one full step is therefore
 + \tfrac{2}{3}|1,1\rangle|RU\rangle,
 \label{eq:state-after-one-step}
 \end{equation}
-in which position and coin are now entangled. The norm is preserved:
+is entangled in position$\otimes$coin, with the norm preserved:
 \begin{equation}
 \langle\psi_1|\psi_1\rangle
 = \tfrac{1}{9} + \tfrac{2}{9} + \tfrac{2}{9} + \tfrac{4}{9} = 1.
 \end{equation}
-Figure~\ref{fig:one-step} shows the coin splitting the amplitude over
-the four directions (panel a) and the shift distributing the branches
-to their respective nodes on the torus (panel b). Unlike the
-$\rho = 1/2$ Hadamard case, the split is asymmetric: the
-$|RU\rangle$ branch retains amplitude $2/3$, while the two off-diagonal
-branches carry $-\sqrt{2}/3$ and the opposite-corner branch carries
-$1/3$.
+Figure~\ref{fig:one-step} shows the splitting of amplitude across the
+four directions and the subsequent distribution of the branches to
+their destination nodes.
+
+Two features of this step are worth noting. First, position and coin
+are entangled after a single shift, reflecting the correlation between
+the two axes that the separable coin introduces. Second, unlike the
+$\rho = 1/2$ Hadamard case, the split is asymmetric: the $|RU\rangle$
+branch retains amplitude $2/3$, the two off-diagonal branches carry
+$-\sqrt{2}/3$, and the opposite-corner branch carries $1/3$.
