@@ -97,21 +97,6 @@ sections:
     components:
     - docs/sep-coin-tori/components/paragraphs/disc-5-1
     - docs/sep-coin-tori/components/tables/tab-violations
-  - title: Torus Size Inversely Controls Maximum Period
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-6-1
-    - docs/sep-coin-tori/components/tables/tab-max-period-disc
-  - title: Algebraic Structure
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-7-1
-    - docs/sep-coin-tori/components/tables/tab-algebraic
-  - title: Phase Quantisation
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-8-1
-    - docs/sep-coin-tori/components/tables/tab-phase-quant
-  - title: Comparison with Dukes (2014)
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-9-1
   - title: Summary of Open Questions
     components:
     - docs/sep-coin-tori/components/paragraphs/disc-10-1
