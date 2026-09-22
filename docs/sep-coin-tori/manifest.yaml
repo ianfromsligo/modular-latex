@@ -56,6 +56,10 @@ sections:
     - docs/sep-coin-tori/components/theorems/proof-corollary
   components:
   - docs/sep-coin-tori/components/paragraphs/theory-3-dukes-summary
+- label: method
+  title: Methodology
+  components:
+  - docs/sep-coin-tori/components/paragraphs/method-1
 - title: Experimental Results
   label: results
   components:
