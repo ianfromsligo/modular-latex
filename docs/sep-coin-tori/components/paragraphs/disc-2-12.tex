@@ -1,0 +1,31 @@
+\subsubsection{The $10 \times 10$ revival: a case study}
+
+The $10 \times 10$ torus is the largest torus in the classification that
+admits the longest period $N = 60$, and it provides a clean illustration
+of the revival mechanism. We take the reflection parameters
+$\rho_x = \rho_y = (5-\sqrt{5})/10 \approx 0.2764$ and set
+$\delta_x = \delta_y = 0$.
+
+Figure~\ref{fig:10x10-fidelity} tracks the fidelity of the walker's
+state against the initial state over eighty steps. The fidelity reaches
+its maximum at $N = 60$ with a value numerically indistinguishable from
+$1$; no other step in the range shown produces a full-state revival.
+Figure~\ref{fig:10x10-probability} shows the position probability
+distribution at ten snapshots between step~1 and step~70. The walker
+starts localised at the origin, spreads outward over the first thirty
+steps, and refocuses to the origin at $N = 60$, by which point the
+distribution matches the initial condition almost exactly.
+
+Figure~\ref{fig:10x10-spin} shows the four components of the spin (coin)
+distribution over the same range. The coin state returns to its initial
+values at both $N = 30$ and $N = 60$. The return at $N = 30$ is a
+\emph{partial} revival only: the coin reconstructs itself while the
+position distribution has not yet refocused, and no full-state revival
+occurs at that step. It is only at $N = 60$ that the coin and position
+distributions both coincide with their initial values, producing the
+exact full-state revival recorded in Table~\ref{tab:period-count}. This
+distinction between partial coin revival and full-state revival is
+visible directly in the two panels of Figs.~\ref{fig:10x10-fidelity}
+and~\ref{fig:10x10-spin}: the spin distribution shows structure at both
+$N = 30$ and $N = 60$, while the fidelity remains below the revival
+threshold at the former.

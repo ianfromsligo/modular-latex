@@ -93,6 +93,10 @@ sections:
   - docs/sep-coin-tori/components/paragraphs/disc-2-9
   - docs/sep-coin-tori/components/paragraphs/disc-2-10
   - docs/sep-coin-tori/components/paragraphs/disc-2-11
+  - docs/sep-coin-tori/components/paragraphs/disc-2-12
+  - docs/sep-coin-tori/components/figures/fig-10x10-fidelity
+  - docs/sep-coin-tori/components/figures/fig-10x10-probability
+  - docs/sep-coin-tori/components/figures/fig-10x10-spin
 - title: Conclusion
   label: conclusion
   components:

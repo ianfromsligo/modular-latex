@@ -1,24 +1,30 @@
-The classification proceeds in two stages. The starting point is the 1D
-revival set $\{2, 3, 4, 5, 6, 8, 10\}$ established in Theorem~1, together
-with the corresponding 1D parameter tables of Dukes~\cite{Dukes2014},
-which for each cycle length $k$ in the revival set list the reflection
-and phase values $(\rho, \delta)$ that produce a full-state revival and
-the associated step count $N$. Taking these as given, we assemble the 1D
-walk operator $U_k = S_k(I_k \otimes C_k)$ in the computational basis
-using the coin of Eq.~(\ref{eq:1d_coin}) and verify each tabulated
-revival by direct matrix exponentiation, checking that $U_k^N$ equals
-the identity up to a global phase to within a numerical tolerance of
-$10^{-8}$. The 2D classification then follows from the tensor-product
-factorisation $U_{k \times m} = U_k \otimes U_m$ of
+The classification proceeds in three steps.
+
+\emph{Step 1 (1D input).} We take as given the 1D revival set
+$\{2, 3, 4, 5, 6, 8, 10\}$ from Theorem~1 and the corresponding 1D
+parameter tables of Dukes~\cite{Dukes2014}. For each cycle length $k$ in
+the revival set, these tables list the reflection and phase values
+$(\rho, \delta)$ that produce a full-state revival, together with the
+associated step count $N$.
+
+\emph{Step 2 (1D verification).} For each tabulated 1D revival, we
+assemble the walk operator $U_k = S_k(I_k \otimes C_k)$ in the
+computational basis using the coin of Eq.~(\ref{eq:1d_coin}), raise it
+to the tabulated step count $N$, and verify that $U_k^N$ equals the
+identity up to a global phase to within a numerical tolerance of
+$10^{-8}$.
+
+\emph{Step 3 (2D pairing).} The 2D classification follows from the
+tensor-product factorisation $U_{k \times m} = U_k \otimes U_m$ of
 Eq.~(\ref{eq:factorised_unitary}). For each pair $(k, m)$ with
-$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$, we enumerate the periods $N$ shared
-by the two 1D revival sets $\mathcal{N}_k$ and $\mathcal{N}_m$ and, for
-each such $N$, record every combination of 1D parameters
+$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$, we take the periods $N$ shared by
+the two 1D revival sets $\mathcal{N}_k$ and $\mathcal{N}_m$ and, for each
+such $N$, record every combination of 1D parameters
 $(\rho_x, \delta_x) \in \mathcal{R}_k(N)$ and
 $(\rho_y, \delta_y) \in \mathcal{R}_m(N)$ that produces the revival,
-verifying each candidate numerically by the same matrix-exponentiation
-check. Because the 1D input is complete and the 2D pairing is
-exhaustive over the finite revival set, the resulting classification of
-$209$ inequivalent parameter sets is complete. The verification script
-and the full classification are available at
-\cite{full_revivals_references}.
+verifying each candidate by the same matrix-exponentiation check.
+
+Because the 1D input is complete and the 2D pairing is exhaustive over
+the finite revival set, the resulting classification of $209$
+inequivalent parameter sets is complete. The verification script and the
+full classification are available at \cite{full_revivals_references}.
