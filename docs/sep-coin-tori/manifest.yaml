@@ -64,13 +64,15 @@ sections:
   label: results
   components:
   - docs/sep-coin-tori/components/paragraphs/results-1
-  - docs/sep-coin-tori/components/tables/tab-period-count
-  - docs/sep-coin-tori/components/tables/tab-torus-period
-  - docs/sep-coin-tori/components/tables/tab-rho-by-period
-  - docs/sep-coin-tori/components/tables/tab-delta-by-period
-  - docs/sep-coin-tori/components/tables/tab-complete-phase
-  - docs/sep-coin-tori/components/tables/tab-max-period
+  - docs/sep-coin-tori/components/tables/tab-period-count/tab-period-count
+  - docs/sep-coin-tori/components/tables/tab-torus-period/tab-torus-period
   - docs/sep-coin-tori/components/paragraphs/results-2
+  - docs/sep-coin-tori/components/tables/tab-max-period/tab-max-period
+  - docs/sep-coin-tori/components/paragraphs/results-3
+  - docs/sep-coin-tori/components/tables/tab-rho-by-period/tab-rho-by-period
+  - docs/sep-coin-tori/components/tables/tab-rho-frequency/tab-rho-frequency
+  - docs/sep-coin-tori/components/paragraphs/results-4
+  - docs/sep-coin-tori/components/tables/tab-delta-by-period/tab-delta-by-period
 - title: Discussion
   label: discussion
   subsections:
