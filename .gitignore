@@ -14,3 +14,7 @@ __pycache__/
 docs/*/components/figures/**/*.png
 docs/*/components/figures/**/*.pdf
 docs/sep-coin-tori/components/figures/fig-one-step/one-step.png
+!docs/sep-coin-tori/components/figures/fig-10x10-fidelity.png
+!docs/sep-coin-tori/components/figures/fig-10x10-probability.png
+!docs/sep-coin-tori/components/figures/fig-10x10-spin.png
+
