@@ -75,42 +75,13 @@ sections:
   - docs/sep-coin-tori/components/tables/tab-delta-by-period/tab-delta-by-period
 - title: Discussion
   label: discussion
-  subsections:
-  - title: Specific Observations
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-1-1
-    - docs/sep-coin-tori/components/paragraphs/disc-1-2-n2
-    - docs/sep-coin-tori/components/paragraphs/disc-1-3-n8
-    - docs/sep-coin-tori/components/tables/tab-period8
-    - docs/sep-coin-tori/components/paragraphs/disc-1-4-n12
-    - docs/sep-coin-tori/components/paragraphs/disc-1-5-n16
-    - docs/sep-coin-tori/components/paragraphs/disc-1-6-n20
-    - docs/sep-coin-tori/components/paragraphs/disc-1-7-n24
-    - docs/sep-coin-tori/components/paragraphs/disc-1-8-n30
-  - title: N=60 Families
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-2-1
-  - title: Most Significant Observation
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-3-1
-    - docs/sep-coin-tori/components/tables/tab-period60
-    - docs/sep-coin-tori/components/paragraphs/disc-3-2
-  - title: Complete Phase Families
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-4-1
-    - docs/sep-coin-tori/components/tables/tab-complete-phase-disc
-  - title: Violation of No-Go Theorem
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-5-1
-    - docs/sep-coin-tori/components/tables/tab-violations
-  - title: Summary of Open Questions
-    components:
-    - docs/sep-coin-tori/components/paragraphs/disc-10-1
   components:
+  - docs/sep-coin-tori/components/paragraphs/disc-1-0
   - docs/sep-coin-tori/components/paragraphs/disc-1-1
   - docs/sep-coin-tori/components/paragraphs/disc-1-2
   - docs/sep-coin-tori/components/paragraphs/disc-1-3
   - docs/sep-coin-tori/components/paragraphs/disc-1-4
+  - docs/sep-coin-tori/components/paragraphs/disc-2-0
   - docs/sep-coin-tori/components/paragraphs/disc-2-1
   - docs/sep-coin-tori/components/paragraphs/disc-2-2
   - docs/sep-coin-tori/components/paragraphs/disc-2-3
