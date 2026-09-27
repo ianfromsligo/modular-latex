@@ -1,30 +1,24 @@
-The classification proceeds in three steps.
+The classification proceeds in two stages.
 
-\emph{Step 1 (1D input).} We take as given the 1D revival set
-$\{2, 3, 4, 5, 6, 8, 10\}$ from Theorem~1 and the corresponding 1D
-parameter tables of Dukes~\cite{Dukes2014}. For each cycle length $k$ in
-the revival set, these tables list the reflection and phase values
-$(\rho, \delta)$ that produce a full-state revival, together with the
-associated step count $N$.
+\emph{Stage one} is the 1D search. We swept $\rho$ on a grid of
+resolution $10^{-4}$ and $\delta$ over twenty rational multiples of
+$\pi$, evaluating the root-of-unity residual at every grid point for
+each $N \le \Nmax$ and each $k \le \Kmax$. Candidates below a
+threshold of $10^{-3}$ were refined by bounded minimisation followed
+by a local sweep, and accepted only after independent verification by
+matrix exponentiation. The search reproduced every entry of Dukes'
+classification \cite{Dukes2014} and found no revival for any
+$k \in \{7, 9, 11, 12, 16\}$. The script and raw output are available
+in the accompanying repository.
 
-\emph{Step 2 (1D verification).} For each tabulated 1D revival, we
-assemble the walk operator $U_k = S_k(I_k \otimes C_k)$ in the
-computational basis using the coin of Eq.~(\ref{eq:1d_coin}), raise it
-to the tabulated step count $N$, and verify that $U_k^N$ equals the
-identity up to a global phase to within a numerical tolerance of
-$10^{-8}$.
-
-\emph{Step 3 (2D pairing).} The 2D classification follows from the
-tensor-product factorisation $U_{k \times m} = U_k \otimes U_m$ of
-Eq.~(\ref{eq:factorised_unitary}). For each pair $(k, m)$ with
-$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$, we take the periods $N$ shared by
-the two 1D revival sets $\mathcal{N}_k$ and $\mathcal{N}_m$ and, for each
-such $N$, record every combination of 1D parameters
-$(\rho_x, \delta_x) \in \mathcal{R}_k(N)$ and
-$(\rho_y, \delta_y) \in \mathcal{R}_m(N)$ that produces the revival,
-verifying each candidate by the same matrix-exponentiation check.
-
-Because the 1D input is complete and the 2D pairing is exhaustive over
-the finite revival set, the resulting classification of $209$
-inequivalent parameter sets is complete. The verification script and the
-full classification are available at \cite{full_revivals_references}.
+\emph{Stage two} is the 2D pairing. The tensor-product factorisation
+$U_{k \times m} = U_k \otimes U_m$ of
+Eq.~(\ref{eq:factorised_unitary}) reduces the 2D problem to matching
+the revival period sets of the two axes. For each pair $(k, m)$ with
+$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$, we take the common periods
+$N \in \mathcal{N}_k \cap \mathcal{N}_m$ and record every combination
+of 1D parameters that produces the revival, verifying each candidate
+by matrix exponentiation. Because both stages are exhaustive over the
+search bounds, the resulting classification of $209$ inequivalent
+parameter sets is complete within those bounds. The full set of
+values is available at \cite{full_revivals_references}.

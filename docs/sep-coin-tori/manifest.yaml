@@ -14,7 +14,7 @@ metadata:
     dimensions satisfy $k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and their
     respective revival period sets share a common element,
     $\mathcal{N}_k \cap \mathcal{N}_m \neq \emptyset$; our exhaustive
-    computational search over $k, m \le 10$ finds no revival outside
+    computational search over $k, m \le 16$ finds no revival outside
     this class. Our methodology builds on Dukes'' results
     \cite{Dukes2014} on 1D cycles for a general coin with reflection
     parameter $\rho$ and phase parameter $\delta$. We extend this
