@@ -1,0 +1,4 @@
+\par
+\subsubsection{Period $N = 60$}
+The period $N=60$ is realised by $182$ parameter sets across $2\\times2$, $2\\times3$, $2\\times4$, $2\\times5$, $2\\times10$, $3\\times3$, $3\\times4$, $3\\times5$, $3\\times10$, $4\\times4$, $4\\times5$, $4\\times10$, $5\\times5$, $5\\times10$, $10\\times10$. The reflection parameters take values in $\{$0.0146$, $0.0409$, $0.2569$, $0.2764$, $0.5933$, $0.6473$, $0.7539$, $0.7921$, $0.9341$\}$, and the phase parameters in $\{$0.0000\pi$, $0.1667\pi$, $0.4000\pi$, $0.5000\pi$, $0.6667\pi$, $0.8000\pi$, $0.8333\pi$, $1.2000\pi$, $1.5000\pi$, $1.6000\pi$, $2.0000\pi$\}$. This highly composite period is one of the most populated
+in the classification.
