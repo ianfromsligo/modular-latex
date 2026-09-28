@@ -1,5 +1,0 @@
-\par
-\subsubsection{Period $N = 54$}
-The period $N=54$ is realised by $659$ parameter sets across $2\\times2$, $2\\times3$, $2\\times4$, $2\\times6$, $3\\times3$, $3\\times4$, $3\\times6$, $4\\times4$, $4\\times6$, $6\\times6$. The reflection parameters take values in $\{$0.0135$, $0.0180$, $0.1569$, $0.2686$, $0.3020$, $0.3290$, $0.3566$, $0.4026$, $0.6275$, $0.6434$, $0.6980$, $0.7054$, $0.8431$, $0.8579$\}$, and the phase parameters in $\{$0.0000\pi$, $0.3333\pi$, $0.6667\pi$, $1.0000\pi$, $1.3333\pi$, $2.0000\pi$\}$. This is one of the longest periods in the classification,
-and is confined to a small number of tori whose revival
-period sets intersect at a large common value.

@@ -5,10 +5,15 @@ overleaf/
 *.out
 *.bbl
 *.blg
+*.bak
+*.bak
+*.prefix.bak
+# Build artifacts
+__pycache__/
+*.pyc
 *.fdb_latexmk
 *.fls
 *.synctex.gz
-__pycache__/
 .venv/
 .DS_Store
 docs/*/components/figures/**/*.png

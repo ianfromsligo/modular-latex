@@ -1,3 +1,0 @@
-\par
-\subsubsection{Period $N = 10$}
-The period $N=10$ is realised by $253$ parameter sets across $2\\times2$, $2\\times3$, $2\\times4$, $2\\times6$, $3\\times3$, $3\\times4$, $3\\times6$, $4\\times4$, $4\\times6$, $6\\times6$. The reflection parameters take values in $\{$0.0955$, $0.1056$, $0.1910$, $0.2764$, $0.3455$, $0.3820$, $0.4607$, $0.6910$, $0.7236$, $0.8727$, $0.9045$\}$, and the phase parameters in $\{$0.0000\pi$, $0.3333\pi$, $0.4000\pi$, $0.5000\pi$, $0.6667\pi$, $0.8000\pi$, $1.0000\pi$, $1.2000\pi$, $1.3333\pi$, $1.5000\pi$, $2.0000\pi$\}$. This period is realised on the following tori.

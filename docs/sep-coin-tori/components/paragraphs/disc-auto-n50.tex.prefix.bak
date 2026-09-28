@@ -1,3 +1,0 @@
-\par
-\subsubsection{Period $N = 50$}
-The period $N=50$ is realised by $275$ parameter sets across $2\\times2$, $2\\times3$, $2\\times4$, $2\\times6$, $3\\times3$, $3\\times4$, $3\\times6$, $4\\times4$, $4\\times6$, $6\\times6$. The reflection parameters take values in $\{$0.0455$, $0.0684$, $0.2871$, $0.3094$, $0.3922$, $0.4686$, $0.5314$, $0.5937$, $0.6248$, $0.6564$, $0.6718$, $0.7129$, $0.7679$, $0.7882$, $0.9051$, $0.9505$, $0.9649$, $0.9843$\}$, and the phase parameters in $\{$0.0000\pi$, $0.4000\pi$, $0.8000\pi$, $1.0000\pi$, $1.2000\pi$, $1.6000\pi$, $2.0000\pi$\}$. This period is realised on the following tori.
