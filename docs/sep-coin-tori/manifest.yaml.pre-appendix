@@ -108,6 +108,7 @@ sections:
   - docs/sep-coin-tori/components/paragraphs/disc-spectrum-1
   - docs/sep-coin-tori/components/paragraphs/disc-spectrum-2
   - docs/sep-coin-tori/components/paragraphs/disc-spectrum-3
+  - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
   - docs/sep-coin-tori/components/paragraphs/disc-spectrum-4
   - docs/sep-coin-tori/components/paragraphs/disc-algebra-1
   - docs/sep-coin-tori/components/paragraphs/disc-algebra-2
@@ -124,10 +125,3 @@ sections:
   components:
   - docs/sep-coin-tori/components/paragraphs/conclusion
   - docs/sep-coin-tori/components/paragraphs/acknowledgments
-- title: Appendix
-  label: appendix
-  components:
-  - docs/sep-coin-tori/components/paragraphs/appendix-intro
-  - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
-  - docs/sep-coin-tori/components/tables/tab-rho-frequency/tab-rho-frequency
-  - docs/sep-coin-tori/components/tables/tab-delta-by-period/tab-delta-by-period
