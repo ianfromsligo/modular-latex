@@ -105,20 +105,38 @@ sections:
   - docs/sep-coin-tori/components/paragraphs/disc-1-0
   - docs/sep-coin-tori/components/paragraphs/disc-1-1
   - docs/sep-coin-tori/components/paragraphs/disc-1-2
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-1
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-2
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-3
-  - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-4
-  - docs/sep-coin-tori/components/paragraphs/disc-algebra-1
-  - docs/sep-coin-tori/components/paragraphs/disc-algebra-2
-  - docs/sep-coin-tori/components/paragraphs/disc-algebra-3
-  - docs/sep-coin-tori/components/paragraphs/disc-60
-  - docs/sep-coin-tori/components/paragraphs/disc-10x10-1
+  - docs/sep-coin-tori/components/paragraphs/disc-1-3
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n4
+  - docs/sep-coin-tori/components/paragraphs/disc-1-4
+  - docs/sep-coin-tori/components/paragraphs/disc-1-3-n8
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n10
+  - docs/sep-coin-tori/components/paragraphs/disc-1-4-n12
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n14
+  - docs/sep-coin-tori/components/paragraphs/disc-1-5-n16
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n18
+  - docs/sep-coin-tori/components/paragraphs/disc-1-6-n20
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n22
+  - docs/sep-coin-tori/components/paragraphs/disc-1-7-n24
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n26
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n28
+  - docs/sep-coin-tori/components/paragraphs/disc-1-8-n30
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n32
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n34
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n36
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n38
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n40
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n42
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n44
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n46
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n48
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n50
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n52
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n54
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n56
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n58
+  - docs/sep-coin-tori/components/paragraphs/disc-auto-n60
   - docs/sep-coin-tori/components/figures/fig-10x10-fidelity
-  - docs/sep-coin-tori/components/paragraphs/disc-10x10-2
   - docs/sep-coin-tori/components/figures/fig-10x10-probability
-  - docs/sep-coin-tori/components/paragraphs/disc-10x10-3
   - docs/sep-coin-tori/components/figures/fig-10x10-spin
 - title: Conclusion
   label: conclusion
