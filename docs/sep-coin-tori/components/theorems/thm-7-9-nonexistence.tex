@@ -1,0 +1,42 @@
+\begin{theorem}[Non-existence for $k = 7$ and $k = 9$]
+\label{thm:7-9-nonexistence}
+A discrete-time quantum walk on a $1$D cycle $\mathbb{Z}_k$ driven
+by Dukes' coin $C(\rho, \delta)$ admits no non-trivial full-state
+revival for $k = 7$ or $k = 9$, at any step count $N$, for any
+$\rho \in \mathbb{Q}$.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:7-9-nonexistence}]
+The $1$D dispersion relation
+$\sin\theta_j = \sqrt{\rho}\,\sin(2\pi j/k)$ gives
+\[
+\cos^2\theta_j
+= 1 - \rho\,\sin^2\!\left(\frac{2\pi j}{k}\right),
+\qquad j = 0, 1, \ldots, k-1 .
+\]
+A full-state revival at step $N$ requires
+$\theta_j \in \pi\mathbb{Q}$ for every $j$, so
+$\cos^2\theta_j \in \{0, \tfrac{1}{4}, 1\}$. Since $\rho$ is
+rational, $\cos^2\theta_j$ lies in the same field as
+$\sin^2(2\pi j/k)$; if $\sin^2(2\pi j/k)$ is irrational and outside
+$\{0, \tfrac{1}{4}, 1\}$ for every non-trivial $j$, no revival is
+possible.
+
+For $k = 7$, the values $\sin^2(2\pi j/7)$ lie in the real cubic
+subfield of $\mathbb{Q}(\zeta_7)$ and share the minimal polynomial
+$64 x^3 - 112 x^2 + 56 x - 7$, which has no rational root in
+$\{0, \tfrac{1}{4}, 1\}$.
+
+For $k = 9$, the values $\sin^2(2\pi j/9)$ for
+$j \in \{1, 2, 4, 5, 7, 8\}$ lie in the real cubic subfield of
+$\mathbb{Q}(\zeta_9)$ and share the minimal polynomial
+$64 x^3 - 96 x^2 + 36 x - 3$, also with no rational root in
+$\{0, \tfrac{1}{4}, 1\}$. The remaining non-trivial orbits are
+$j = 3, 6$ (giving $\sin^2 = \tfrac{3}{4}$) and, when $k$ is even,
+$j = k/2$ (giving $\sin^2 = 1$). Neither value lies in the set
+$\{0, \tfrac{1}{4}, 1\}$ except the $j = 0$ trivial case and the
+$\sin^2 = 1$ case, and the latter contributes the same eigenphase
+to every walk in the $j$-orbit pair and therefore cannot by itself
+produce a revival. Hence the root-of-unity condition fails for
+every non-trivial eigenphase, and no full-state revival exists.
+\end{proof}

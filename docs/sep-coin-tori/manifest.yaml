@@ -1,39 +1,32 @@
 template: revtex-pra
 metadata:
-  title: Complete Classification of Full State Revivals on Separable Quantum Walks on Tori
+  title: Full Classification of Full State Revivals on Separable Quantum Walks on Tori
   authors:
   - name: Ian Craig
     email: ian.craig@atu.ie
     affiliation: Atlantic Technological University, Sligo, Ireland
   - name: Michael McGetterick
     affiliation: University of Galway, Galway, Ireland
-  abstract: 'We present a complete classification of full-state revivals for
-    separable discrete-time quantum walks on $k \times m$ toroidal
-    lattices. To achieve this, we prove (up to a global phase) that a
-    2D torus exhibits full-state revivals whenever both spatial
-    dimensions satisfy $k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and their
-    respective revival period sets share a common element,
-    $\mathcal{N}_k \cap \mathcal{N}_m \neq \emptyset$; our exhaustive
-    computational search over $k, m \le 16$ finds no revival outside
-    this class. Our methodology builds on Dukes'' results
-    \cite{Dukes2014} on 1D cycles for a general coin with reflection
-    parameter $\rho$ and phase parameter $\delta$. We extend this
-    framework to a four-parameter general coin on the $k \times m$
-    torus. We report a computational search that enumerates all
-    full-state revivals for $k \times m$ toroidal lattices with
-    dimensions in the above revival set. We identify three phenomena
-    in the 2D case: (i) multi-period revivals on the same torus size,
-    where full-state revivals occur across multiple distinct step
-    counts depending on the coin parameters (e.g. the $3 \times 3$
-    torus); (ii) mixed-$\rho$ parameters, where revivals occur under
-    unequal reflection parameters along the two axes; (iii)
-    mixed-$\delta$ asymmetry, where revivals occur under coin phase
-    parameters along the two axes ($\delta_x \neq \delta_y$).
+  abstract: |
+    We present a full classification of full-state revivals for separable
+    discrete-time quantum walks on $k \times m$ toroidal lattices with
+    $k, m \le 10$. We prove that a $2$D torus exhibits full-state revivals
+    whenever both spatial dimensions satisfy $k, m \in \{2, 3, 4, 5, 6, 8,
+    10\}$ and their respective revival period sets share a common element,
+    $\mathcal{N}_k \cap \mathcal{N}_m \neq \emptyset$. Our methodology
+    builds on Dukes' results \cite{Dukes2014} on $1$D cycles for a general
+    coin with reflection parameter $\rho$ and phase parameter $\delta$. We
+    extend this framework to a separable four-parameter coin on the
+    $k \times m$ torus, and prove non-existence of $1$D revivals for
+    $k = 7$ and $k = 9$ at any step count for rational $\rho$. Our
+    exhaustive computational search over $k, m \le 16$ finds no revival
+    outside the class above. The reduced classification contains $4773$
+    parameter sets across $24$ tori and $30$ distinct revival periods.
     Notably, the longest revival period, $N = 60$, occurs on the
     $5 \times 5$ torus. This paper provides a full classification of
-    full-state revivals given the four parameters of the coin and may
-    find applications in quantum memory and in structures such as
-    frequency dividers and counters.'
+    full-state revivals given the four parameters of the separable coin
+    and may find applications in quantum memory and in structures such as
+    frequency dividers and counters.
   date: today
   bibliographystyle: apsrev4-2
   bibliography: docs/sep-coin-tori/references.bib
@@ -80,6 +73,7 @@ sections:
     - docs/sep-coin-tori/components/theorems/proof-corollary
     - docs/sep-coin-tori/components/theorems/cor-nonexistence
     - docs/sep-coin-tori/components/theorems/proof-corollary-nonexistence
+    - docs/sep-coin-tori/components/theorems/thm-7-9-nonexistence
   components:
   - docs/sep-coin-tori/components/paragraphs/theory-3-dukes-summary
 - label: method
@@ -94,7 +88,6 @@ sections:
   - docs/sep-coin-tori/components/tables/tab-period-count-b/tab-period-count-b
   - docs/sep-coin-tori/components/tables/tab-torus-period/tab-torus-period
   - docs/sep-coin-tori/components/paragraphs/results-2
-  - docs/sep-coin-tori/components/tables/tab-max-period/tab-max-period
   - docs/sep-coin-tori/components/paragraphs/results-3
   - docs/sep-coin-tori/components/paragraphs/results-4
 - title: Discussion
@@ -129,3 +122,4 @@ sections:
   - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
   - docs/sep-coin-tori/components/tables/tab-rho-exact/tab-rho-exact
   - docs/sep-coin-tori/components/tables/tab-delta-exact/tab-delta-exact
+  - docs/sep-coin-tori/components/tables/tab-galois-poly/tab-galois-poly
