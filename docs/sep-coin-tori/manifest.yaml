@@ -129,5 +129,5 @@ sections:
   components:
   - docs/sep-coin-tori/components/paragraphs/appendix-intro
   - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
-  - docs/sep-coin-tori/components/tables/tab-rho-frequency/tab-rho-frequency
-  - docs/sep-coin-tori/components/tables/tab-delta-by-period/tab-delta-by-period
+  - docs/sep-coin-tori/components/tables/tab-rho-exact/tab-rho-exact
+  - docs/sep-coin-tori/components/tables/tab-delta-exact/tab-delta-exact
