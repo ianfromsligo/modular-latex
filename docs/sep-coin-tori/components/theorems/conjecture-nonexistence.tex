@@ -1,0 +1,26 @@
+\begin{theorem}[Conjecture: no revivals outside the admissible set]
+\label{conj:no-other-k}
+No cycle length $k \notin \{2, 3, 4, 5, 6, 8, 10\}$ admits
+a non-trivial 1D full-state revival at any period $N$ or any
+coin parameter $\rho \in (0, 1)$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+The dispersion relation for a $k$-cycle is
+$\sin\theta_j = \sqrt{\rho}\,\sin(2\pi j/k)$ for
+$j = 1, \ldots, k-1$. A revival at period $N$ forces
+$\theta_j = 2\pi m_j/N$, so
+$\sin^2(2\pi m_j/N) = \rho\,\sin^2(2\pi j/k)$.
+Taking the ratio of two distinct $j$ eliminates $\rho$:
+the left side lies in the real subfield of
+$\mathbb{Q}(\zeta_N)$ and the right side in the real
+subfield of $\mathbb{Q}(\zeta_k)$.
+For prime $k \ge 7$, the degree-$(k-1)/2$ field on the
+right cannot embed in a cyclotomic field of degree dividing
+$\phi(N)/2$ unless $k - 1 \mid \phi(N)$. This restricts $N$
+to a sparse arithmetic set; a finite check over these $N$
+would confirm non-existence. The cases $k = 7$ and $k = 9$
+are within reach of this method; a uniform proof for all $k$
+would require control of the cyclotomic intersection in
+general.
+\end{proof}

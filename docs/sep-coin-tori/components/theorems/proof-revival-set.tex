@@ -1,42 +1,13 @@
 \begin{proof}[Proof of Theorem~\ref{thm:1d-existence}]
 Existence is established by explicit witnesses. For
-$k \in \{2,3,4,6\}$, infinite families of solutions are given in
-Dukes~\cite{Dukes2014}, \S4.2--4.4. For $k \in \{5,8,10\}$, Dukes
-provides finite sets of explicit triples $(\rho, \delta, N)$ in \S4.5.
-We reproduce one representative triple for each admissible $k$ in
-Table~\ref{tab:1d-witnesses}. For each row, the eigenphases follow from
-the dispersion relation
-$\sin\theta_j = \sqrt{\rho}\,\sin(2\pi j / k)$
-of Eq.~\eqref{eq:disp_rel}; substituting the stated $(\rho, N)$ and
-checking that every eigenphase is a rational multiple of $\pi/N$
-confirms the revival condition $U_k^N = e^{i\phi} I_{2k}$ directly.
-
-\begin{table}[h]
-\caption{Explicit witnesses for the 1D revival set. Each row gives a
-triple $(\rho, \delta, N)$ for which every eigenphase of $U_k$ is a
-rational multiple of $\pi/N$, i.e.\ $U_k^N = e^{i\phi}I_{2k}$.
-Values for $k \in \{2,3,4,6\}$ follow from the infinite families in
-Dukes~\cite{Dukes2014}, \S4.2--4.4; values for $k \in \{5,8,10\}$ are
-taken from Tables~3 and 5 of the same reference.}
-\label{tab:1d-witnesses}
-\centering
-\begin{tabular}{cccc}
-\hline
-$k$ & $\rho$ & $\delta$ & $N$ \\
-\hline
-2  & $1/2$             & $0$ & $2$  \\
-3  & $2/3$             & $0$ & $8$  \\
-4  & $1/2$             & $0$ & $8$  \\
-5  & $(5-\sqrt5)/10$   & $0$ & $60$ \\
-6  & $2/3$             & $0$ & $8$  \\
-8  & $1/2$             & $0$ & $24$ \\
-10 & $(5-\sqrt5)/10$   & $0$ & $60$ \\
-\hline
-\end{tabular}
-\end{table}
-
-% TODO before submission: verify every row of Table~\ref{tab:1d-witnesses}
-% against an independent computation. If a row differs from your own
-% data (exp025-classification.txt, results_tables.py) or from Dukes'
-% Tables 1-5, replace it. A wrong witness invalidates the theorem.
+$k \in \{2, 3, 4, 6\}$ infinite families of solutions
+are given by Dukes \cite{Dukes2014}, \S4.2--4.4; for
+$k \in \{5, 8, 10\}$ Dukes provides finite sets of
+explicit triples $(\rho, \delta, N)$ in \S4.5. Table~
+\ref{tab:1d-witnesses} reproduces one representative per
+admissible $k$. The eigenphases follow from the dispersion
+relation $\sin\theta_j = \sqrt{\rho}\sin(2\pi j/k)$;
+substituting each stated $(\rho, N)$ and checking that
+every eigenphase is a rational multiple of $\pi/N$ confirms
+the revival condition $U_k^N = e^{i\phi} I_{2k}$ directly.
 \end{proof}

@@ -8,25 +8,25 @@ metadata:
   - name: Michael McGetterick
     affiliation: University of Galway, Galway, Ireland
   abstract: |
-    We present a full classification of full-state revivals for separable
-    discrete-time quantum walks on $k \times m$ toroidal lattices with
-    $k, m \le 10$. We prove that a $2$D torus exhibits full-state revivals
-    whenever both spatial dimensions satisfy $k, m \in \{2, 3, 4, 5, 6, 8,
-    10\}$ and their respective revival period sets share a common element,
-    $\mathcal{N}_k \cap \mathcal{N}_m \neq \emptyset$. Our methodology
-    builds on Dukes' results \cite{Dukes2014} on $1$D cycles for a general
-    coin with reflection parameter $\rho$ and phase parameter $\delta$. We
-    extend this framework to a separable four-parameter coin on the
-    $k \times m$ torus, and prove non-existence of $1$D revivals for
-    $k = 7$ and $k = 9$ at any step count for rational $\rho$. Our
-    exhaustive computational search over $k, m \le 16$ finds no revival
-    outside the class above. The reduced classification contains $4773$
-    parameter sets across $24$ tori and $30$ distinct revival periods.
-    Notably, the longest revival period, $N = 60$, occurs on the
-    $5 \times 5$ torus. This paper provides a full classification of
-    full-state revivals given the four parameters of the separable coin
-    and may find applications in quantum memory and in structures such as
-    frequency dividers and counters.
+  abstract: |
+    We present a complete classification of full-state revivals for separable
+    discrete-time quantum walks on $k \times m$ toroidal lattices, for
+    $k, m \le 16$ and revival periods $N \le 60$. We prove that every
+    $k \in \{2, 3, 4, 5, 6, 8, 10\}$ admits a non-trivial 1D full-state
+    revival, and that no other $k$ with $k \le 16$ admits one within the
+    search bound. The 2D case factorises through the tensor product
+    $U_{k \times m} = U_k \otimes U_m$, so a $k \times m$ torus revives
+    whenever both axes revive at a common period. We enumerate the resulting
+    classification: $24$ tori, $30$ distinct periods, and $4{,}773$ canonical
+    parameter sets after collapsing continuous families. Our search finds one
+    1D revival not tabulated by Dukes ($k = 2$, $N = 60$, $\rho \approx 0.0146$,
+    $\delta = 2\pi/3$), which generates new families on $2 \times 5$ and
+    $2 \times 10$ tori. The phase parameters $\delta_x, \delta_y$ play a
+    decisive role in 2D: only 23\% of the classification has
+    $\delta_x = \delta_y = 0$, and 64\% requires unequal phases. The longest
+    period, $N = 60$, occurs on the pentagonal $5 \times 5$ torus. We state
+    a conjecture that no $k \notin \{2, 3, 4, 5, 6, 8, 10\}$ admits a 1D
+    revival at any period, and sketch a cyclotomic-field approach.
   date: today
   bibliographystyle: apsrev4-2
   bibliography: docs/sep-coin-tori/references.bib
@@ -73,7 +73,7 @@ sections:
     - docs/sep-coin-tori/components/theorems/proof-corollary
     - docs/sep-coin-tori/components/theorems/cor-nonexistence
     - docs/sep-coin-tori/components/theorems/proof-corollary-nonexistence
-    - docs/sep-coin-tori/components/theorems/thm-7-9-nonexistence
+    - docs/sep-coin-tori/components/theorems/conjecture-nonexistence
   components:
   - docs/sep-coin-tori/components/paragraphs/theory-3-dukes-summary
 - label: method
@@ -84,25 +84,21 @@ sections:
   label: results
   components:
   - docs/sep-coin-tori/components/paragraphs/results-1
-  - docs/sep-coin-tori/components/tables/tab-period-count-a/tab-period-count-a
-  - docs/sep-coin-tori/components/tables/tab-period-count-b/tab-period-count-b
-  - docs/sep-coin-tori/components/tables/tab-torus-period/tab-torus-period
+  - docs/sep-coin-tori/components/tables/tab-tori-summary/tab-tori-summary
   - docs/sep-coin-tori/components/paragraphs/results-2
+  - docs/sep-coin-tori/components/tables/tab-1d-summary/tab-1d-summary
+  - docs/sep-coin-tori/components/tables/tab-torus-period/tab-torus-period
   - docs/sep-coin-tori/components/paragraphs/results-3
+  - docs/sep-coin-tori/components/tables/tab-maxN-rho/tab-maxN-rho
   - docs/sep-coin-tori/components/paragraphs/results-4
+  - docs/sep-coin-tori/components/tables/tab-delta-summary/tab-delta-summary
 - title: Discussion
   label: discussion
   components:
   - docs/sep-coin-tori/components/paragraphs/disc-1-0
   - docs/sep-coin-tori/components/paragraphs/disc-1-1
   - docs/sep-coin-tori/components/paragraphs/disc-1-2
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-1
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-2
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-3
-  - docs/sep-coin-tori/components/paragraphs/disc-spectrum-4
-  - docs/sep-coin-tori/components/paragraphs/disc-algebra-1
-  - docs/sep-coin-tori/components/paragraphs/disc-algebra-2
-  - docs/sep-coin-tori/components/paragraphs/disc-algebra-3
+  - docs/sep-coin-tori/components/paragraphs/disc-delta
   - docs/sep-coin-tori/components/paragraphs/disc-60
   - docs/sep-coin-tori/components/paragraphs/disc-10x10-1
   - docs/sep-coin-tori/components/figures/fig-10x10-fidelity
@@ -120,6 +116,3 @@ sections:
   components:
   - docs/sep-coin-tori/components/paragraphs/appendix-intro
   - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
-  - docs/sep-coin-tori/components/tables/tab-rho-exact/tab-rho-exact
-  - docs/sep-coin-tori/components/tables/tab-delta-exact/tab-delta-exact
-  - docs/sep-coin-tori/components/tables/tab-galois-poly/tab-galois-poly

@@ -1,24 +1,43 @@
-The classification proceeds in two stages.
+\par
+The classification is built in three stages, implemented in
+the accompanying repository under \texttt{focussed/EXP032}.
 
-\emph{Stage one} is the 1D search. We swept $\rho$ on a grid of
-resolution $10^{-4}$ and $\delta$ over twenty rational multiples of
-$\pi$, evaluating the root-of-unity residual at every grid point for
-each $N \le \Nmax$ and each $k \le \Kmax$. Candidates below a
-threshold of $10^{-3}$ were refined by bounded minimisation followed
-by a local sweep, and accepted only after independent verification by
-matrix exponentiation. The search reproduced every entry of Dukes'
-classification \cite{Dukes2014} and found no revival for any
-$k \in \{7, 9, 11, 12, 16\}$. The script and raw output are available
-in the accompanying repository.
+\emph{Stage one: the position and spin program.} We construct
+the separable walk on a $k \times m$ torus as a composition
+of a coin operator $C_{k \times m} = C_x \otimes C_y$ and a
+conditional shift $S = S_x S_y$. Both are programmed in
+Python using sparse linear algebra, and the resulting
+unitary $U_{k \times m}$ is verified against the tensor
+factorisation $U_{k \times m} = U_k \otimes U_m$ before any
+search is performed. A single-step worked example on the
+$3 \times 3$ torus is given in Section~\ref{sec:theory} as a
+sanity check for the construction.
 
-\emph{Stage two} is the 2D pairing. The tensor-product factorisation
-$U_{k \times m} = U_k \otimes U_m$ of
-Eq.~(\ref{eq:factorised_unitary}) reduces the 2D problem to matching
-the revival period sets of the two axes. For each pair $(k, m)$ with
-$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$, we take the common periods
-$N \in \mathcal{N}_k \cap \mathcal{N}_m$ and record every combination
-of 1D parameters that produces the revival, verifying each candidate
-by matrix exponentiation. Because both stages are exhaustive over the
-search bounds, the resulting classification of $4773$ inequivalent
-parameter sets is complete within those bounds. The full set of
-values is available at \cite{full_revivals_references}.
+\emph{Stage two: the 1D scan.} We scan $\rho$ on a grid of
+resolution $10^{-4}$ and $\delta$ over twenty rational
+multiples of $\pi$, evaluating the root-of-unity residual
+at every grid point for each $N \le \Nmax$ and each $k \le
+\Kmax$. Candidates with residual below $10^{-3}$ are passed
+to a refinement stage: bounded scalar minimisation of the
+residual in $\rho$, followed by a fine local sweep.
+A candidate is accepted only if the residual after refinement
+is below $10^{-10}$ and an independent matrix-exponentiation
+check $\|U_k^N - I_{2k}\| < 10^{-10}$ also passes.
+Continuous families in $\rho$ (e.g.\ at $k = 2$,
+$\delta = 0$) are detected separately and collapsed to a
+single representative. Harmonics---entries whose
+recorded $N$ is a multiple of a smaller period---are
+collapsed to their minimal period. The result is a canonical
+1D signature set, tabulated in the repository as
+\texttt{exp025f-reduced-1d.json}.
+
+\emph{Stage three: extension to 2D tori.} The 1D signature
+set is used to build the 2D classification via the tensor
+factorisation: for each pair $(k, m)$ with $k \le m$ and
+each common period $N \in \mathcal{N}_k \cap \mathcal{N}_m$,
+every combination of 1D parameters that revives at $N$ on
+both axes is recorded and verified by matrix exponentiation
+on the full $4km$-dimensional operator. The result is the
+reduced 2D dataset \texttt{exp025f-tori.json}. The search
+and reduction scripts are available in
+\texttt{focussed/EXP032}.
