@@ -8,7 +8,6 @@ metadata:
   - name: Michael McGetterick
     affiliation: University of Galway, Galway, Ireland
   abstract: |
-  abstract: |
     We present a complete classification of full-state revivals for separable
     discrete-time quantum walks on $k \times m$ toroidal lattices, for
     $k, m \le 16$ and revival periods $N \le 60$. We prove that every
