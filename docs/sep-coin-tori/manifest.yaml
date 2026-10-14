@@ -8,26 +8,29 @@ metadata:
   - name: Michael McGetterick
     affiliation: University of Galway, Galway, Ireland
   abstract: |
-    We classify full-state revivals for separable discrete-time
-    quantum walks on $k \times m$ toroidal lattices, for $k, m \le 16$
-    and revival periods $N \le 60$. We prove that every
-    $k \in \{2, 3, 4, 5, 6, 8, 10\}$ admits a non-trivial 1D revival,
-    and that no other $k \le 16$ admits one within the search bound.
-    The 2D case factorises as $U_{k \times m} = U_k \otimes U_m$, so a
-    torus revives whenever both axes revive at a common period. We find
-    one 1D revival not tabulated by Dukes, at $k = 2$, $N = 60$,
-    $\rho \approx 0.0146$, $\delta = 2\pi/3$, which generates new
-    revival families on $2 \times 5$ and $2 \times 10$ tori. The
-    classification contains $24$ tori, $30$ periods, and $4{,}773$
-    canonical parameter sets. A striking feature emerges: only $23\%$
-    of these have zero phase on both axes. In 1D the phase parameter
-    $\delta$ affects only the eigenvectors; in 2D it becomes a
-    selection mechanism, with $64\%$ of revivals requiring unequal
-    phases along the two axes. The longest period, $N = 60$, occurs on
-    the smallest prime torus $5 \times 5$. We state a conjecture that no
-    $k \notin \{2, 3, 4, 5, 6, 8, 10\}$ admits a 1D revival at any
-    period, and sketch a cyclotomic-field approach to the proof.
-
+    A quantum walk revives when it returns exactly to its starting
+    state after some number of steps, N. Such intrinsic full-state
+    revivals are rare, and on most graphs they do not occur at all. We
+    determine which toroidal lattices support them. We work with the
+    coin family of Dukes, parameterised by a reflection parameter
+    $\rho$ and a phase $\delta$, extended separably to two dimensions.
+    We prove that exactly seven cycle lengths admit a revival in one
+    dimension, namely $k \in \{2, 3, 4, 5, 6, 8, 10\}$, and that no
+    other $k \le 16$ does so within $N \le 60$ steps. In two
+    dimensions the walk factorises as a tensor product of two
+    one-dimensional walks, so a torus revives whenever both of its
+    axes revive at a common period, N. This gives $24$ tori, $30$
+    periods, and $4{,}773$ parameter sets. We find one revival that
+    Dukes did not tabulate, at $k = 2$, $N = 60$, $\rho \approx
+    0.0146$, $\delta = 2\pi/3$, and it generates new families on the
+    $2 \times 5$ and $2 \times 10$ tori. The longest period, $N = 60$,
+    occurs on mani tori including the $2 \times 2$ torus. We record how the phase
+    parameters distribute across the classification, and note that in
+    two dimensions the two axes may carry unequal phases, a direct
+    consequence of the tensor product. We conjecture that no
+    $k \notin \{2, 3, 4, 5, 6, 8, 10\}$ admits a one-dimensional
+    revival at any period, and sketch a cyclotomic-field argument
+    toward a proof.
   date: today
   bibliographystyle: apsrev4-2
   bibliography: docs/sep-coin-tori/references.bib
@@ -35,10 +38,13 @@ sections:
 - title: Introduction
   label: intro
   components:
+  components:
   - docs/sep-coin-tori/components/paragraphs/intro-1
   - docs/sep-coin-tori/components/paragraphs/intro-2
   - docs/sep-coin-tori/components/paragraphs/intro-3
   - docs/sep-coin-tori/components/paragraphs/intro-4
+  - docs/sep-coin-tori/components/paragraphs/intro-5
+  - docs/sep-coin-tori/components/paragraphs/intro-6
 - title: Theoretical Framework
   label: theory
   subsections:
