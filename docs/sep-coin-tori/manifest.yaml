@@ -109,6 +109,7 @@ sections:
   label: conclusion
   components:
   - docs/sep-coin-tori/components/paragraphs/conclusion
+  - docs/sep-coin-tori/components/paragraphs/ai-disclosure
   - docs/sep-coin-tori/components/paragraphs/acknowledgments
 - title: Appendix
   label: appendix
