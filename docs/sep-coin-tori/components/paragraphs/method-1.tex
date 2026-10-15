@@ -1,43 +1,77 @@
 \par
-The classification is built in three stages, implemented in
-the accompanying repository under \texttt{focussed/EXP032}.
+The classification is built and verified in a single notebook,
+\texttt{EXP033.ipynb}, available in the accompanying repository
+\cite{full_revivals_references}. The notebook proceeds in three
+stages: a direct demonstration of the new revivals, an
+operator-level verification of the 1D signature set, and a
+tensor-product construction of the 2D classification. All code,
+data, and result files are produced by the notebook and packaged
+as a single archive at the end.
 
-\emph{Stage one: the position and spin program.} We construct
-the separable walk on a $k \times m$ torus as a composition
-of a coin operator $C_{k \times m} = C_x \otimes C_y$ and a
-conditional shift $S = S_x S_y$. Both are programmed in
-Python using sparse linear algebra, and the resulting
-unitary $U_{k \times m}$ is verified against the tensor
-factorisation $U_{k \times m} = U_k \otimes U_m$ before any
-search is performed. A single-step worked example on the
-$3 \times 3$ torus is given in Section~\ref{sec:theory} as a
-sanity check for the construction.
+\emph{Direct demonstration.} We evolve the walk step by step and
+record the fidelity of the state against its initial value,
+\begin{equation}
+F(N) = |\langle \psi_0 | \psi_N \rangle|^2 .
+\label{eq:fidelity}
+\end{equation}
+For the two new revivals --- $k = 2$ and $k = 4$, both at
+$\delta = \pi/2$, $\rho = 1/2$ --- the fidelity is zero at odd
+steps and reaches exactly $1$ at $N = 6$ and at every multiple
+of six. As controls we reproduce two revivals from Dukes'
+tables, at $k = 4$, $\rho = 3/4$, $\delta = 0$ (period 6) and
+$k = 3$, $\rho = 2/3$, $\delta = 0$ (period 8), and confirm the
+tabulated periods. The notebook writes one fidelity plot per
+case.
 
-\emph{Stage two: the 1D scan.} We scan $\rho$ on a grid of
-resolution $10^{-4}$ and $\delta$ over twenty rational
-multiples of $\pi$, evaluating the root-of-unity residual
-at every grid point for each $N \le \Nmax$ and each $k \le
-\Kmax$. Candidates with residual below $10^{-3}$ are passed
-to a refinement stage: bounded scalar minimisation of the
-residual in $\rho$, followed by a fine local sweep.
-A candidate is accepted only if the residual after refinement
-is below $10^{-10}$ and an independent matrix-exponentiation
-check $\|U_k^N - I_{2k}\| < 10^{-10}$ also passes.
-Continuous families in $\rho$ (e.g.\ at $k = 2$,
-$\delta = 0$) are detected separately and collapsed to a
-single representative. Harmonics---entries whose
-recorded $N$ is a multiple of a smaller period---are
-collapsed to their minimal period. The result is a canonical
-1D signature set, tabulated in the repository as
-\texttt{exp025f-reduced-1d.json}.
+\emph{1D revival verification.} We transcribe the complete set
+of 1D revival solutions tabulated by Dukes for cycle lengths
+$k \in \{2, 3, 4, 5, 6, 8, 10\}$, up to period $N = 30$ for
+$k \in \{2, 3, 4, 6\}$ and $N = 60$ for $k \in \{5, 8, 10\}$,
+giving 174 quadruples $(k, \rho, \delta, N)$. We verify each at
+the operator level using the eigenvalue residual
+\begin{equation}
+r(k, \rho, \delta, N)
+= \max_j \left| \lambda_j^N - \overline{\lambda^N} \right| ,
+\label{eq:eig-residual}
+\end{equation}
+where $\lambda_j$ are the eigenvalues of $U_k(\rho, \delta)$ and
+$\overline{\lambda^N}$ is their $N$-th power average. The
+residual vanishes exactly when all eigenvalues share a common
+$N$-th root of unity, which is the exact revival condition. All
+174 entries pass with $r < 10^{-6}$.
 
-\emph{Stage three: extension to 2D tori.} The 1D signature
-set is used to build the 2D classification via the tensor
-factorisation: for each pair $(k, m)$ with $k \le m$ and
-each common period $N \in \mathcal{N}_k \cap \mathcal{N}_m$,
-every combination of 1D parameters that revives at $N$ on
-both axes is recorded and verified by matrix exponentiation
-on the full $4km$-dimensional operator. The result is the
-reduced 2D dataset \texttt{exp025f-tori.json}. The search
-and reduction scripts are available in
-\texttt{focussed/EXP032}.
+We use the eigenvalue formulation rather than the equivalent
+matrix-power test because the latter accumulates floating-point
+error at large $N$; we observed spurious failures at the
+$10^{-6}$ level for $N \approx 60$.
+
+Two entries in the set are not tabulated by Dukes: $k = 2$ and
+$k = 4$, both at $\delta = \pi/2$, $\rho = 1/2$, $N = 6$.
+Section~\ref{sec:discussion} discusses their structure.
+
+\emph{2D revival search.} For a separable walk on a
+$k \times m$ torus, the single-step operator factorises as
+$U_{k \times m} = U_k \otimes U_m$. A full-state revival occurs
+at period $N$ when both factors revive at $N$. Equivalently, the
+eigenvalues of $U_{k \times m}$ are products $\lambda_i \mu_j$
+of the eigenvalues of the two factors, and the revival
+condition is that all such products raised to the power $N$
+share a common unit-modulus value. We use the same eigenvalue
+residual as in Eq.~\eqref{eq:eig-residual}, evaluated on the
+product spectrum.
+
+We search over all ordered pairs $(k, m)$ with
+$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and $k \le m$, every pair of
+1D revival signatures with a common period $N$, and every
+multiple of that common period up to $N = 420$, the largest LCM
+of two periods in the 1D set. Each candidate is accepted only
+if the eigenvalue residual falls below $10^{-6}$.
+
+The search writes two data files. The first,
+\texttt{2d\_classification.csv}, is the canonical
+classification: one row per distinct parameter set
+$(k, m, \rho_x, \delta_x, \rho_y, \delta_y)$ recorded at its
+smallest revival period, containing 18{,}174 entries. The
+second, \texttt{2d\_classification\_full.csv}, records every
+revival period at which each parameter set revives, containing
+111{,}741 entries. Both are available as supplementary data.

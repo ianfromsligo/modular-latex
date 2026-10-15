@@ -25,3 +25,5 @@ docs/sep-coin-tori/components/figures/fig-one-step/one-step.png
 
 _orphans/
 _junk/
+docs/sep-coin-tori/data/EXP033.ipynb
+docs/sep-coin-tori/data/EXP033_outputs/*.csv
