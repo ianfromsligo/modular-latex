@@ -16,16 +16,17 @@ metadata:
     family of Dukes, parameterised by a reflection parameter $\rho$
     and a phase $\delta$, extended separably to two dimensions. We
     prove that exactly seven cycle lengths admit a revival in one
-    dimension, namely $k \in \{2, 3, 4, 5, 6, 8, 10\}$, and that
-    no other $k \le 16$ does so within the search bound. In two
+    dimension, namely $k \in \{2, 3, 4, 5, 6, 8, 10\}$. An
+    exhaustive search over the remaining cycle lengths up to
+    $k = 16$ finds no revival within $N \le 60$ steps. In two
     dimensions the walk factorises as a tensor product of two
     one-dimensional walks, so a torus revives whenever both of its
     axes revive at a common period, N. This gives $28$ tori, $59$
     periods, and $18{,}174$ canonical parameter sets. We find two
     revivals that Dukes did not tabulate, at $k = 2$ and $k = 4$,
-    both at $\delta = \pi/2$, $\rho = 1/2$, $N = 6$. The longest
-    period, $N = 60$, occurs on many tori, including the $2 \times 2$
-    and $5 \times 5$ tori. We record how the phase parameters
+    both at $\delta = \pi/2$, $\rho = 1/2$, $N = 6$. The period
+    $N = 60$ occurs on many tori, including the $2 \times 2$ and
+    $5 \times 5$ tori. We record how the phase parameters
     distribute across the classification, and note that in two
     dimensions the two axes may carry unequal phases, a direct
     consequence of the tensor product. We conjecture that no
