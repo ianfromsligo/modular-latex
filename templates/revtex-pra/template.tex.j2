@@ -61,6 +61,7 @@
 
 <%- if manifest.prelude %>
 <%- for section in manifest.prelude %>
+
 \section*{ <<- section.title ->> }
 <%- for comp in section.components %>
 << emit(comp) >>\par{}
@@ -70,9 +71,11 @@
 <%- endif %>
 
 <%- for section in manifest.sections %>
+
 \section{\label{sec:<<- section.label ->>}<<- section.title ->>}
 <%- if section.subsections %>
 <%- for sub in section.subsections %>
+
 \subsection{ <<- sub.title ->> }
 <%- for comp in sub.components %>
 << emit(comp) >>\par{}
@@ -90,6 +93,7 @@
 
 <%- if manifest.postlude %>
 <%- for section in manifest.postlude %>
+
 \section*{ <<- section.title ->> }
 <%- for comp in section.components %>
 << emit(comp) >>\par{}
