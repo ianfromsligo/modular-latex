@@ -40,7 +40,6 @@ sections:
 - title: Introduction
   label: intro
   components:
-  components:
   - docs/sep-coin-tori/components/paragraphs/intro-1
   - docs/sep-coin-tori/components/paragraphs/intro-2
   - docs/sep-coin-tori/components/paragraphs/intro-3
