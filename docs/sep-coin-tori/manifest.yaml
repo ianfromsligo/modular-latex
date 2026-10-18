@@ -123,4 +123,4 @@ sections:
   label: appendix
   components:
   - docs/sep-coin-tori/components/paragraphs/appendix-intro
-  #- docs/sep-coin-tori/components/tables/tab-1d-catalogue-exact/tab-1d-catalogue-exact
+  - docs/sep-coin-tori/components/tables/tab-1d-catalogue-exact/tab-1d-catalogue-exact
