@@ -1,11 +1,12 @@
 The classification is built and verified in a single notebook,
 \texttt{EXP033.ipynb}, available in the accompanying repository
 \cite{full_revivals_references}. The notebook proceeds in three
-stages: a direct demonstration of the new revivals, an
-operator-level verification of the 1D signature set, and a
-tensor-product construction of the 2D classification. All code,
-data, and result files are produced by the notebook and packaged
-as a single archive at the end.
+stages, matching the classification described in the Introduction:
+a direct demonstration of the new revivals, an operator-level
+verification of the 1D signature set, and a tensor-product
+construction of the 2D classification. All code, data, and result
+files are produced by the notebook and packaged as a single archive
+at the end.
 
 \emph{Direct demonstration.} We evolve the walk step by step and
 record the fidelity of the state against its initial value,
@@ -19,8 +20,9 @@ steps and reaches exactly $1$ at $N = 6$ and at every multiple
 of six. As controls we reproduce two revivals from Dukes'
 tables, at $k = 4$, $\rho = 3/4$, $\delta = 0$ (period 6) and
 $k = 3$, $\rho = 2/3$, $\delta = 0$ (period 8), and confirm the
-tabulated periods. The notebook writes one fidelity plot per
-case.
+tabulated periods. The operator residual
+$\|U^N - e^{i\phi}I\|$ at these revivals is of order $10^{-15}$
+in every case.
 
 \emph{1D revival verification.} We transcribe the complete set
 of 1D revival solutions tabulated by Dukes for cycle lengths
@@ -37,16 +39,16 @@ where $\lambda_j$ are the eigenvalues of $U_k(\rho, \delta)$ and
 $\overline{\lambda^N}$ is their $N$-th power average. The
 residual vanishes exactly when all eigenvalues share a common
 $N$-th root of unity, which is the exact revival condition. All
-174 entries pass with $r < 10^{-6}$.
+174 entries pass with $r < 10^{-6}$; the worst residual in the
+set is $2.3 \times 10^{-13}$, at $k = 10$,
+$\rho = (5 - \sqrt{5})/10$, $\delta = 6\pi/5$, $N = 60$.
 
 We use the eigenvalue formulation rather than the equivalent
 matrix-power test because the latter accumulates floating-point
-error at large $N$; we observed spurious failures at the
-$10^{-6}$ level for $N \approx 60$.
-
-Two entries in the set are not tabulated by Dukes: $k = 2$ and
-$k = 4$, both at $\delta = \pi/2$, $\rho = 1/2$, $N = 6$.
-Section~\ref{sec:discussion} discusses their structure.
+error at large $N$. The 1D catalogue includes the two new
+revivals at $k = 2$ and $k = 4$, both at $\delta = \pi/2$,
+$\rho = 1/2$, $N = 6$, which are not present in Dukes'
+tabulation.
 
 \emph{2D revival search.} For a separable walk on a
 $k \times m$ torus, the single-step operator factorises as
@@ -73,4 +75,7 @@ $(k, m, \rho_x, \delta_x, \rho_y, \delta_y)$ recorded at its
 smallest revival period, containing 18{,}174 entries. The
 second, \texttt{2d\_classification\_full.csv}, records every
 revival period at which each parameter set revives, containing
-111{,}741 entries. Both are available as supplementary data.
+111{,}741 entries. The notebook uses a SHA-256 hash of the
+1D signature set to guard against re-running the search when
+the inputs are unchanged. Both files are available as
+supplementary data.
