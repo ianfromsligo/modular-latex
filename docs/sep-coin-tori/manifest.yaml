@@ -82,8 +82,6 @@ sections:
     - docs/sep-coin-tori/components/theorems/cor-nonexistence
     - docs/sep-coin-tori/components/theorems/proof-corollary-nonexistence
     - docs/sep-coin-tori/components/theorems/conjecture-nonexistence
-  components:
-  - docs/sep-coin-tori/components/paragraphs/theory-3-dukes-summary
 - label: method
   title: Methodology
   components:
