@@ -63,7 +63,7 @@
 <%- for section in manifest.prelude %>
 \section*{ <<- section.title ->> }
 <%- for comp in section.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>\par{}
 
 <%- endfor %>
 <%- endfor %>
@@ -75,14 +75,14 @@
 <%- for sub in section.subsections %>
 \subsection{ <<- sub.title ->> }
 <%- for comp in sub.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>\par{}
 
 <%- endfor %>
 <%- endfor %>
 <%- endif %>
 <%- if section.components %>
 <%- for comp in section.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>\par{}
 
 <%- endfor %>
 <%- endif %>
@@ -92,7 +92,7 @@
 <%- for section in manifest.postlude %>
 \section*{ <<- section.title ->> }
 <%- for comp in section.components %>
-<< emit(comp) >>\par
+<< emit(comp) >>\par{}
 
 <%- endfor %>
 <%- endfor %>
