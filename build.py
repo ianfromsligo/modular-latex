@@ -100,7 +100,7 @@ def inline_inputs(tex: str, base: Path, seen: set | None = None) -> str:
         if candidate in seen:
             return match.group(0)
         seen.add(candidate)
-        body = candidate.read_text()
+        body = candidate.read_text().rstrip("\n")
         return inline_inputs(body, candidate.parent, seen)
 
     return INPUT_RE.sub(repl, tex)
