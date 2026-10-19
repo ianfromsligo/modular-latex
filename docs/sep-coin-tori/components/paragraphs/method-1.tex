@@ -1,12 +1,13 @@
 The classification is built and verified in a single notebook,
 \texttt{EXP033.ipynb}, available in the accompanying repository
 \cite{full_revivals_references}. The notebook proceeds in three
-stages, matching the classification described in the Introduction:
-a direct demonstration of the new revivals, an operator-level
+stages: a direct demonstration of the new revivals, an operator-level
 verification of the 1D signature set, and a tensor-product
-construction of the 2D classification. All code, data, and result
-files are produced by the notebook and packaged as a single archive
-at the end.
+construction of the 2D classification. The construction stage includes
+a reduction pass that collapses harmonic duplicates, recording each
+distinct parameter set once at its smallest revival period. All code,
+data, and result files are produced by the notebook and packaged as a
+single archive at the end.
 
 \emph{Direct demonstration.} We evolve the walk step by step and
 record the fidelity of the state against its initial value,
@@ -53,13 +54,9 @@ tabulation.
 \emph{2D revival search.} For a separable walk on a
 $k \times m$ torus, the single-step operator factorises as
 $U_{k \times m} = U_k \otimes U_m$. A full-state revival occurs
-at period $N$ when both factors revive at $N$. Equivalently, the
-eigenvalues of $U_{k \times m}$ are products $\lambda_i \mu_j$
-of the eigenvalues of the two factors, and the revival
-condition is that all such products raised to the power $N$
-share a common unit-modulus value. We use the same eigenvalue
-residual as in Eq.~\eqref{eq:eig-residual}, evaluated on the
-product spectrum.
+at period $N$ when both factors revive at $N$. We use the same
+eigenvalue residual as in Eq.~\eqref{eq:eig-residual}, evaluated
+on the product spectrum.
 
 We search over all ordered pairs $(k, m)$ with
 $k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and $k \le m$, every pair of
@@ -69,13 +66,11 @@ of two periods in the 1D set. Each candidate is accepted only
 if the eigenvalue residual falls below $10^{-6}$.
 
 The search writes two data files. The first,
-\texttt{2d\_classification.csv}, is the canonical
+\texttt{2d\_classification.csv}, is the reduced
 classification: one row per distinct parameter set
 $(k, m, \rho_x, \delta_x, \rho_y, \delta_y)$ recorded at its
-smallest revival period, containing 18{,}174 entries. The
-second, \texttt{2d\_classification\_full.csv}, records every
-revival period at which each parameter set revives, containing
-111{,}741 entries. The notebook uses a SHA-256 hash of the
-1D signature set to guard against re-running the search when
-the inputs are unchanged. Both files are available as
-supplementary data.
+smallest revival period, containing 18{,}174 entries after the
+reduction pass. The second, \texttt{2d\_classification\_full.csv},
+records every revival period at which each parameter set revives,
+containing 111{,}741 entries. Both are available as supplementary
+data.
