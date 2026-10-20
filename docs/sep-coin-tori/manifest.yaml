@@ -94,7 +94,6 @@ sections:
   - docs/sep-coin-tori/components/paragraphs/results-2
   - docs/sep-coin-tori/components/tables/tab-torus-period-n60/tab-torus-period-n60
   - docs/sep-coin-tori/components/paragraphs/results-3
-  - docs/sep-coin-tori/components/tables/tab-period-summary/tab-period-summary
   - docs/sep-coin-tori/components/paragraphs/results-4
   - docs/sep-coin-tori/components/tables/tab-delta-summary/tab-delta-summary
 - title: Discussion
