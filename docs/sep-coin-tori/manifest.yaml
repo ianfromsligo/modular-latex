@@ -8,41 +8,32 @@ metadata:
   - name: Michael McGetterick
     affiliation: University of Galway, Galway, Ireland
   abstract: |
-    A quantum walk revives when it returns exactly to its starting state after
-    some number of steps. Such intrinsic full-state revivals are rare, and they
-    occur mainly on symmetric topologies. We determine which toroidal lattices
-    support exact revivals, and for which coin parameters. We work with the coin
-    family of Dukes, parameterised by a reflection parameter $\rho$ and a phase
-    $\delta$, extended separably to two dimensions. We distinguish two criteria
-    throughout: a \emph{projective} revival, in which the state returns up to an
-    unobservable global phase ($U^N = e^{i\phi} I$), and an \emph{exact} revival,
-    in which it returns with no phase at all ($U^N = I$). Dukes' tabulation uses
-    the exact criterion, and so do we. We prove that exactly seven cycle lengths
-    admit an exact revival in one dimension, namely
-    $k \in \{2, 3, 4, 5, 6, 8, 10\}$. An exhaustive check of the remaining cycle
-    lengths up to $k = 16$ finds no exact revival within $N \le 60$ steps. In
-    two dimensions the walk factorises as a tensor product of two
-    one-dimensional walks. Every 2D exact revival is therefore the tensor product
-    of two 1D exact revivals, except in one case: when the two factor phases are
-    inverses of each other, the torus revives exactly although neither factor
-    does, at a proper divisor of the factor least common multiple. This
-    phase-cancellation phenomenon yields, for example, an exact revival at
-    $N = 12$ on the $2 \times 2$ torus with $\delta_x = \delta_y = \pi/2$,
-    although each factor's exact period is $24$. The closure of the 1D catalogue
-    under tensor product gives $28$ tori, $59$ exact revival periods, and
-    $18{,}174$ reduced parameter sets ($103{,}427$ parameter--period pairs). The
-    1D catalogue is Dukes' tabulation with one correction: the $k = 2$,
-    $\rho = 1/2$, $\delta \in \{\pi/2, 3\pi/2\}$ exact revivals at $N = 24$ lie
-    in Dukes' seed family but were not tabulated, because the original seeding
-    was too constrained. No other 1D entries are added or removed; in particular,
-    the $k = 4$ revival at $N = 6$ is projective only, and its exact revival at
-    $N = 24$ is already in Dukes' Table 4. The period $N = 60$ occurs on many
-    tori, including the $2 \times 2$ and $5 \times 5$ tori. We record how the
-    phase parameters distribute across the classification, and note that in two
-    dimensions the two axes may carry unequal phases, a direct consequence of the
-    tensor product. We conjecture that no $k \notin \{2, 3, 4, 5, 6, 8, 10\}$
-    admits a one-dimensional exact revival at any period, and sketch a
-    cyclotomic-field argument toward a proof.
+    A quantum walk revives when it returns exactly to its starting state
+    after some number of steps. We distinguish two criteria throughout: a
+    \emph{projective} revival, in which the state returns up to an
+    unobservable global phase ($U^N = e^{i\phi} I$), and an \emph{exact}
+    or full-state revival, in which the state returns with no phase ($U^N = I$). 
+    Dukes' 1D tabulation reports exact revivals.. 
+    Here, we work with the 1D coin family of Dukes, parameterised by a
+    reflection parameter $\rho$ and a phase $\delta$, and extend this
+    separably to two dimensions. In 2D, the walk factorises as a tensor
+    product of two 1D walks: a torus revives when both axes revive, and
+    also when the two factor phases are inverses of each other, yielding
+    a revival at a proper divisor of the factor least common multiple.
+    This phase-cancellation case is new. The closure of the 1D catalogue
+    under tensor product gives $28$ tori, $59$ periods, and $18{,}174$
+    reduced parameter sets ($103{,}427$ parameter--period pairs in
+    total). While verifying the 1D results, we prove that exactly seven
+    cycle lengths admit an exact revival in one dimension,
+    $k \in \{2, 3, 4, 5, 6, 8, 10\}$. An operator-level exact check on a
+    $1001 \times 360$ grid over $(\rho, \delta)$, for $k \le 16$ and
+    $N \le 60$, finds no exact revival for the remaining cycle lengths.
+    We find one correction to Dukes' 1D tables: the $k = 2$, $\rho = 1/2$,
+    $\delta \in \{\pi/2, 3\pi/2\}$ exact revivals at $N = 24$ lie in
+    Dukes' seed family but were not tabulated, because Dukes' original
+    seeding was too constrained to reach them.  We offer a
+    conjecture, supported by a cyclotomic-field argument, that no cycle
+    length other than $\{2, 3, 4, 5, 6, 8, 10\}$ admits an exact revival.
   date: today
   bibliographystyle: apsrev4-2
   bibliography: docs/sep-coin-tori/references.bib
