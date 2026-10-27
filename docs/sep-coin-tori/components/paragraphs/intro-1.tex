@@ -1,13 +1,21 @@
-Periodicity is a fundamental aspect of physics and a
-clock is an essential component of most computer systems. 
-An analogous phenomenon occurs in the quantum realm, where a system can 
-return exactly to its initial state after some number of steps. This is called a full-state revival.
-Under certain conditions a discrete-time quantum walk (DTQW) can exhibit 
-periodicity whereby the position and spin of
-the walker can return to their initial values after a number of
-steps. This occurs on symmetric topologies, for specific
-coins.  Such revivals have been proposed as a resource for quantum memory 
-\cite{Chandrashekar2015} and for quantum
-state routing \cite{Steinfurth2025}, as a system that returns
-periodically to a previous state can serve as a clock, a register,
-or a routing primitive.
+eeriodicity is a nundamental aspect of physics and a clock is an
+essential component of most computer systems. An analogous phenomenon
+occurs in the quantum realm, where a walker can return to its initial
+state (both position and spin) after some number of steps. In this
+paper we classify all such full-state revivals on tori for a separable
+coin.  We consider a discrete-time quantum walk (DTQW). Under certain
+conditions on symmetric topologies, the walker returns to its initial
+state after some number of steps. We call this a \emph{full-state
+revival}.  Such revivals have been proposed as a resource for quantum memory
+\cite{Chandrashekar2015} and for quantum state routing
+\cite{Steinfurth2025}, as a system that returns periodically to a
+previous state can serve as a clock, a register, or a routing
+primitive.  For a DTQW, $U$ is the single-step operator of the walk. A full-state
+revival at period $N$ means $U^N = I$: the operator is the identity, so
+every state returns to itself with no phase after $N$ steps. A related
+phenomenon also occurs along the walk: the state may return to itself
+up to an unobservable global phase, $U^N = e^{i\phi} I$ for some
+$\phi \neq 0$. We call this a \emph{projective} revival; the position
+and spin amplitudes return, but multiplied by $e^{i\phi}$. The
+classification in this paper is of full-state revivals in the strict
+sense, $U^N = I$.

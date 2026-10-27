@@ -1,76 +1,112 @@
-The classification is built and verified in a single notebook,
+The tori revival classification is built and verified in a single notebook,
 \texttt{EXP033.ipynb}, available in the accompanying repository
-\cite{full_revivals_references}. The notebook proceeds in three
-stages: a direct demonstration of the new revivals, an operator-level
-verification of the 1D signature set, and a tensor-product
-construction of the 2D classification. The construction stage includes
-a reduction pass that collapses harmonic duplicates, recording each
-distinct parameter set once at its smallest revival period. All code,
-data, and result files are produced by the notebook and packaged as a
-single archive at the end.
+\cite{full_revivals_references}.  This notebook refers to projective
+and exact (Perfec) revivals.  .
+A \emph{projective} revival at period $N$ means
+$U^N = e^{i\phi} I$ for some global phase $\phi$; the state returns
+to itself up to an unobservable phase. An \emph{exact} or perfect revival at
+period $N$ means $U^N = I$; this is the $\phi = 1$ case, and is the
+criterion used by Dukes and adopted here. Every exact revival is
+projective, but not conversely. 
+
+The notebook proceeds in three
+stages: a direct demonstration of the two types of revivals, an
+operator-level verification of the 1D signature set, and a
+tensor-product enumeration of the 2D classification. The
+enumeration stage includes a reduction pass that collapses harmonic
+duplicates, onlu listing each distinct parameter set at its
+first exact revival period. All code, data, and result files
+are produced by the notebook and packaged as a single archive
+\cite{full_revivals_references}.
 
 \emph{Direct demonstration.} We evolve the walk step by step and
 record the fidelity of the state against its initial value,
 \begin{equation}
-F(N) = |\langle \psi_0 | \psi_N \rangle|^2 .
+F(N) = |\langle \psi_0 | \psi_N \rangle|^2 ,
 \label{eq:fidelity}
 \end{equation}
-For the two new revivals --- $k = 2$ and $k = 4$, both at
-$\delta = \pi/2$, $\rho = 1/2$ --- the fidelity is zero at odd
-steps and reaches exactly $1$ at $N = 6$ and at every multiple
-of six. As controls we reproduce two revivals from Dukes'
-tables, at $k = 4$, $\rho = 3/4$, $\delta = 0$ (period 6) and
-$k = 3$, $\rho = 2/3$, $\delta = 0$ (period 8), and confirm the
-tabulated periods. The operator residual
-$\|U^N - e^{i\phi}I\|$ at these revivals is of order $10^{-15}$
-in every case.
+together with two operator-level diagnostics: the exact residual
+$\|U^N - I\|$ and the projective residual
+$\max_j |\lambda_j^N - \overline{\lambda^N}|$, where
+$\lambda_j$ are the eigenvalues of $U$ and
+$\overline{\lambda^N}$ is their $N$-th power mean. We demonstrate
+the two criteria on $k = 2$ and $k = 4$, both at $\rho = 1/2$ and
+$\delta \in \{\pi/2, 3\pi/2\}$. In every case the fidelity is zero
+at odd steps and reaches exactly $1$ at $N = 6$ and every multiple
+of six; the projective residual vanishes at each such step with
+phase $\phi = \pm i$ at $N = 6$, $\phi = -1$ at $N = 12$,
+$\phi = \mp i$ at $N = 18$, and $\phi = 1$ at $N = 24$. Only the
+$N = 24$ revival is exact. The $k = 2$ exact revival at $N = 24$
+lies in Dukes' seed family but was not tabulated; the $k = 4$
+exact revival at $N = 24$ is tabulated in Dukes' Table 4. The
+$N = 6$ revival is projective only and belongs to neither the
+exact catalogue nor a gap in Dukes. As controls we reproduce two
+revivals from Dukes' tables, at $k = 4$, $\rho = 3/4$, $\delta = 0$
+(period 6) and $k = 3$, $\rho = 2/3$, $\delta = 0$ (period 8), and
+confirm the tabulated periods. The exact residual at these
+revivals is of order $10^{-15}$ in every case.
 
 \emph{1D revival verification.} We transcribe the complete set
 of 1D revival solutions tabulated by Dukes for cycle lengths
 $k \in \{2, 3, 4, 5, 6, 8, 10\}$, up to period $N = 30$ for
 $k \in \{2, 3, 4, 6\}$ and $N = 60$ for $k \in \{5, 8, 10\}$,
-giving 174 quadruples $(k, \rho, \delta, N)$. We verify each at
-the operator level using the eigenvalue residual
+together with the $k = 2$, $\rho = 1/2$, $\delta \in \{\pi/2, 3\pi/2\}$
+exact revivals at $N = 24$ that lie in Dukes' seed family but were
+not tabulated, giving 172 quadruples $(k, \rho, \delta, N)$. We
+verify each at the operator level using the projective eigenvalue
+residual
 \begin{equation}
 r(k, \rho, \delta, N)
 = \max_j \left| \lambda_j^N - \overline{\lambda^N} \right| ,
 \label{eq:eig-residual}
 \end{equation}
 where $\lambda_j$ are the eigenvalues of $U_k(\rho, \delta)$ and
-$\overline{\lambda^N}$ is their $N$-th power average. The
-residual vanishes exactly when all eigenvalues share a common
-$N$-th root of unity, which is the exact revival condition. All
-174 entries pass with $r < 10^{-6}$; the worst residual in the
-set is $2.3 \times 10^{-13}$, at $k = 10$,
-$\rho = (5 - \sqrt{5})/10$, $\delta = 6\pi/5$, $N = 60$.
+$\overline{\lambda^N}$ is their $N$-th power mean. The residual
+vanishes when all $\lambda_j^N$ share a common value, i.e.\ when
+$U^N = e^{i\phi} I$ for some $\phi$; the exact revival condition
+$U^N = I$ is the special case $\phi = 1$, and is confirmed
+separately by a matrix-power check at the recorded $N$. All 172
+entries pass with $r < 10^{-6}$; the worst residual in the set is
+$2.3 \times 10^{-13}$, at $k = 10$, $\rho = (5 - \sqrt{5})/10$,
+$\delta = 6\pi/5$, $N = 60$. We use the eigenvalue formulation
+rather than the matrix-power test as the primary check because the
+latter accumulates floating-point error at large $N$; the
+matrix-power check is retained as a confirmation at the recorded
+period.
 
-We use the eigenvalue formulation rather than the equivalent
-matrix-power test because the latter accumulates floating-point
-error at large $N$. The 1D catalogue includes the two new
-revivals at $k = 2$ and $k = 4$, both at $\delta = \pi/2$,
-$\rho = 1/2$, $N = 6$, which are not present in Dukes'
-tabulation.
+\emph{2D enumeration.} For a separable walk on a $k \times m$
+torus, the single-step operator factorises as
+$U_{k \times m} = U_k \otimes U_m$. A full-state exact revival
+occurs at period $N$ when $U_k^N = I$ and $U_m^N = I$, or more
+generally when the product of the two factor phases is $1$; the
+latter includes the case in which each factor revives only
+projectively, with phases that are inverses of each other. We
+enumerate all ordered pairs $(k, m)$ with
+$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and $k \le m$, and every pair
+of 1D revival signatures on those cycles. For each pair we
+diagonalise $U_{k \times m}$ once, scan $N$ from $1$ to $420$,
+and derive the exact period from the phase order via
+$N_{\text{exact}} = N_{\text{proj}} \cdot \mathrm{ord}(\phi)$,
+where $\mathrm{ord}(\phi)$ is the smallest $r$ with $\phi^r = 1$.
+Scanning every $N$ rather than only multiples of the factor LCM
+is necessary because the phase-cancellation case can revive
+exactly at a proper divisor of the LCM. Each canonical record is
+then confirmed by a matrix-power check $\|U^N - I\| < 10^{-10}$ at
+its exact period. The enumeration is exhaustive by construction:
+every 2D revival is a tensor product of 1D revivals, so the
+closure of the 1D catalogue under tensor product is the complete
+2D classification.
 
-\emph{2D revival search.} For a separable walk on a
-$k \times m$ torus, the single-step operator factorises as
-$U_{k \times m} = U_k \otimes U_m$. A full-state revival occurs
-at period $N$ when both factors revive at $N$. We use the same
-eigenvalue residual as in Eq.~\eqref{eq:eig-residual}, evaluated
-on the product spectrum.
-
-We search over all ordered pairs $(k, m)$ with
-$k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and $k \le m$, every pair of
-1D revival signatures with a common period $N$, and every
-multiple of that common period up to $N = 420$, the largest LCM
-of two periods in the 1D set. Each candidate is accepted only
-if the eigenvalue residual falls below $10^{-6}$.
-
-The search writes two data files. The first,
-\texttt{2d\_classification.csv}, is the reduced
-classification: one row per distinct parameter set
+The enumeration writes two data files. The first,
+\texttt{2d\_classification.csv}, is the reduced classification: one
+row per distinct parameter set
 $(k, m, \rho_x, \delta_x, \rho_y, \delta_y)$ recorded at its
-smallest revival period, containing 18{,}174 entries after the
-reduction pass. The second, \texttt{2d\_classification\_full.csv},
-records every revival period at which each parameter set revives,
-containing 111{,}741 entries. Both are available as supplementary
-data.
+smallest exact revival period, containing 18{,}174 entries after
+the reduction pass. The second, \texttt{2d\_classification\_full.csv},
+records every exact revival period at which each parameter set
+revives, containing 103{,}427 entries. The projective counterparts
+\texttt{2d\_classification\_proj.csv} and
+\texttt{2d\_classification\_full\_proj.csv} are included as
+supplementary data for the Discussion. All four carry 1D
+provenance at the factor level; the 2D provenance is the tensor
+product of the two factor labels.
