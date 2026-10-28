@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\caption{Step-by-step amplitudes at the revival steps for the
+discrete-time quantum walk on a 4-cycle with $\rho = 1/2$ and
+$\delta = \pi/2$, starting from $|0, \uparrow\rangle$. Only the
+steps at which the operator satisfies $U^N = e^{i\phi} I$ are shown
+($N = 6, 12, 18, 24$), together with the initial state at $N = 0$.
+At each shown step the walker is localised at site $0$; amplitudes
+on sites $1$, $2$, $3$ are zero and are omitted. The phase column
+gives $e^{i\phi}$ in $U^N = e^{i\phi} I$. Rows marked $\dagger$ are
+projective revivals; the row marked $\dagger\ddagger$ is the unique
+exact revival, at which $e^{i\phi} = 1$ and $U^N = I$. The phase
+follows $e^{i\pi N/6}$, so the four projective rungs form a
+$\mathbb{Z}_4$ tower.}
+\label{tab:k4-demo}
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}r *{2}{>{$}c<{$}} *{2}{>{$}c<{$}} l l@{}}
+\toprule
+$N$ & \multicolumn{2}{c}{spin up} & \multicolumn{2}{c}{spin down} & $e^{i\phi}$ & tag \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & $a$ & $b$ & $a$ & $b$ & & \\
+\midrule
+0  & $1$  & $0$  & $0$ & $0$ & $1$  & \\
+6  & $0$  & $1$  & $0$ & $0$ & $+i$ & $\dagger$ \\
+12 & $-1$ & $0$  & $0$ & $0$ & $-1$ & $\dagger$ \\
+18 & $0$  & $-1$ & $0$ & $0$ & $-i$ & $\dagger$ \\
+24 & $1$  & $0$  & $0$ & $0$ & $+1$ & $\dagger\ddagger$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+{\footnotesize $\dagger$ projective revival: $U^N = e^{i\phi} I$
+with $e^{i\phi} \neq 1$. $\ddagger$ exact revival: $U^N = I$, i.e.\
+$e^{i\phi} = 1$.}
+\end{table}

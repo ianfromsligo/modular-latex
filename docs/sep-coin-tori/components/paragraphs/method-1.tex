@@ -3,14 +3,14 @@ The classification is built and verified in two notebooks,
 accompanying repository \cite{full_revivals_references}. The method
 proceeds in four stages.
 
-\emph{Demonstration.} We evolve the walk step by step for
+\emph{Revival demonstration (EXP033).} We evolve the walk step by step for
 $k = 4$, $\rho = 1/2$, $\delta = \pi/2$ and record the state at each
 step. The walker returns to its initial position and spin at
-$N = 6$ and at $N = 24$; the two returns carry different global
-phases, one projective and one exact. This demonstrates the
+$N = {6,12,18,24)$; these four revivals carry different global
+phases, three projective and one exact. This demonstrates the
 distinction between the two criteria on a single worked example.
 
-\emph{1D verification.} We transcribe the complete set of 1D revival
+\emph{1D verification (EXP033).} We transcribe the complete set of 1D revival
 solutions tabulated by Dukes for cycle lengths
 $k \in \{2, 3, 4, 5, 6, 8, 10\}$, together with the $k = 2$,
 $\rho = 1/2$, $\delta \in \{\pi/2, 3\pi/2\}$ correction, and verify
@@ -25,16 +25,21 @@ $\overline{\lambda^N}$ is their $N$-th power mean. The residual
 vanishes when $U^N = e^{i\phi} I$; the exact case $U^N = I$ is
 confirmed separately by a matrix-power check at the recorded period.
 
-\emph{Exhaustive grid search.} We search for exact revivals on 1D
-cycles for $k \le 16$ by sweeping a dense grid over $(\rho, \delta)$
-and testing $U^N = I$ up to $N = 60$ at each grid point. The
-operator is diagonalised once per grid point, and the exact
-eigenvalue residual $\max_j |\lambda_j^N - 1|$ is evaluated for
-every $N$. Grid points that pass are recorded as candidate revivals;
-the worst residual over the whole grid is recorded as a sensitivity
-witness for the negative cases.
+\emph{Exhaustive grid search (EXP032b).} We search for exact
+revivals on 1D cycles for $k \le 16$ by sweeping a dense grid over
+$(\rho, \delta)$ and testing $U^N = I$ up to $N = 60$ at each grid
+point. The operator is diagonalised once per grid point, and the
+exact eigenvalue residual $\max_j |\lambda_j^N - 1|$ is evaluated
+for every $N$. Grid points that pass the tolerance are recorded as
+\emph{candidate revivals}. Each candidate is then refined: its
+parameters are snapped to the nearest algebraic value, the exact
+period is confirmed by a direct matrix-power check
+$\|U^N - I\| < 10^{-10}$, and the confirmed revival is classified
+as trivial, Dukes-tabulated, or new. Trivial revivals are those at
+the degenerate parameter values $\rho \in \{0, 1\}$ or
+$\delta \in \{0, \pi\}$.
 
-\emph{2D enumeration.} For a separable walk on a $k \times m$ torus,
+\emph{2D enumeration (EXP033).} For a separable walk on a $k \times m$ torus,
 the single-step operator factorises as
 $U_{k \times m} = U_k \otimes U_m$. We enumerate all ordered pairs
 $(k, m)$ with $k, m \in \{2, 3, 4, 5, 6, 8, 10\}$ and $k \le m$,

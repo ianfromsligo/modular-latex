@@ -90,6 +90,7 @@ sections:
   label: results
   components:
   - docs/sep-coin-tori/components/paragraphs/results-1
+  - docs/sep-coin-tori/components/tables/tab-k4-demo/tab-k4.demo.tex
   - docs/sep-coin-tori/components/tables/tab-tori-summary/tab-tori-summary
   - docs/sep-coin-tori/components/paragraphs/results-2
   - docs/sep-coin-tori/components/tables/tab-torus-period-n60/tab-torus-period-n60
