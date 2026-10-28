@@ -12,7 +12,7 @@ metadata:
     after some number of steps. In this paper, we verify the work of
     Dukes on 1D cycles and extend it to toroidal lattices to find and classify
     all exact revivals in the 2D case. To achieve this, we use a separable coin
-    parameterised by reflection parameters $\rho_x$,$\rho_y$ and phase parameters
+    parameterised by reflection parameters $\rho_x$, $\rho_y$ and phase parameters
     $\delta_x$, $\delta_y$.
     In 2D, the separable walk factorises as a tensor
     product of two 1D walks. A torus revives when both axes revive.
@@ -28,8 +28,8 @@ metadata:
     $1001 \times 360$ grid over $(\rho, \delta)$, for $k \le 16$ and
     $N \le 60$, and find no exact revival for the remaining cycle lengths.
     We find one correction to Dukes' 1D tables: the $k = 2$, $\rho = 1/2$,
-    $\delta \in \{\pi/2, 3\pi/2\}$ exact revivals at $N = 24$ lie in
-    Dukes' seed family but were not tabulated, because Dukes' original
+    $\delta \in \{\nicefrac{\pi}{2}, \nicefrac{3\pi}{2}\}$ with exact revivals 
+    at $N = 24$. They lie in Dukes' seed family but were not tabulated, because Dukes' original
     seeding was too constrained to reach them.  We offer a
     conjecture, supported by a cyclotomic-field argument, that no cycle
     length other than $\{2, 3, 4, 5, 6, 8, 10\}$ admits an exact revival.
