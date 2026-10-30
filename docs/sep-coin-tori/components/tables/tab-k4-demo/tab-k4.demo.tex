@@ -1,30 +1,30 @@
 \begin{table}[htbp]
 \centering
-\caption{Step-by-step amplitudes at the revival steps for the
-discrete-time quantum walk on a 4-cycle with $\rho = 1/2$ and
-$\delta = \pi/2$, starting from $|0, \uparrow\rangle$. Only the
-steps at which the operator satisfies $U^N = e^{i\phi} I$ are shown
-($N = 6, 12, 18, 24$), together with the initial state at $N = 0$.
-At each shown step the walker is localised at site $0$; amplitudes
-on sites $1$, $2$, $3$ are zero and are omitted. The phase column
-gives $e^{i\phi}$ in $U^N = e^{i\phi} I$. Rows marked $\dagger$ are
-projective revivals; the row marked $\dagger\ddagger$ is the 
-exact revival, at which $e^{i\phi} = 1$ and $U^N = I$. }
+\caption{Amplitudes at the revival steps for the discrete-time quantum
+walk on a 4-cycle with $\rho = 1/2$ and $\delta = \pi/2$, starting
+from $|0, \uparrow\rangle$. Only the steps satisfying
+$U^N = e^{i\phi} I$ are shown ($N = 6, 12, 18, 24$), together with
+the initial state at $N = 0$. At every shown step the walker is
+localised at site $0$, so only the two spin amplitudes there are
+listed: $\alpha_\uparrow = \langle 0,\uparrow|\psi_N\rangle$ and
+$\alpha_\downarrow = \langle 0,\downarrow|\psi_N\rangle$. The column
+$e^{i\phi}$ gives the global phase in $U^N = e^{i\phi} I$. Rows
+marked $\dagger$ are projective revivals; the row marked
+$\dagger\ddagger$ is the exact revival, at which $e^{i\phi} = 1$ and
+$U^N = I$.}
 \label{tab:k4-demo}
 \small
 \setlength{\tabcolsep}{6pt}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}r *{2}{>{$}c<{$}} *{2}{>{$}c<{$}} l l@{}}
+\begin{tabular}{@{}r cc l l@{}}
 \toprule
-$N$ & \multicolumn{2}{c}{spin up} & \multicolumn{2}{c}{spin down} & $e^{i\phi}$ & tag \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
- & $a$ & $b$ & $a$ & $b$ & & \\
+$N$ & $\alpha_\uparrow$ & $\alpha_\downarrow$ & $e^{i\phi}$ & tag \\
 \midrule
-0  & $1$  & $0$  & $0$ & $0$ & $1$  & \\
-6  & $0$  & $1$  & $0$ & $0$ & $+i$ & $\dagger$ \\
-12 & $-1$ & $0$  & $0$ & $0$ & $-1$ & $\dagger$ \\
-18 & $0$  & $-1$ & $0$ & $0$ & $-i$ & $\dagger$ \\
-24 & $1$  & $0$  & $0$ & $0$ & $+1$ & $\dagger\ddagger$ \\
+0  & $1$  & $0$ & $1$  & \\
+6  & $+i$ & $0$ & $+i$ & $\dagger$ \\
+12 & $-1$ & $0$ & $-1$ & $\dagger$ \\
+18 & $-i$ & $0$ & $-i$ & $\dagger$ \\
+24 & $+1$ & $0$ & $+1$ & $\dagger\ddagger$ \\
 \bottomrule
 \end{tabular}
 

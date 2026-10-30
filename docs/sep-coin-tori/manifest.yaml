@@ -18,9 +18,9 @@ metadata:
     product of two 1D walks. A torus revives when both axes revive.
     It can also revive when the two axes' phases cancel each other,
     at a period shorter than either axis requires.
-    The classification under tensor product contains revivals in
+    The 2D classification contains revivals in
     $28$ tori, $59$ different periods, and $18{,}174$
-    reduced parameter sets.
+    distinct parameter sets.
     On the 1D cycle, we prove that exactly seven
     cycle lengths admit an exact revival in one dimension,
     $k \in \{2, 3, 4, 5, 6, 8, 10\}$ and verify the positive cases at the operator level.
