@@ -11,3 +11,12 @@ $4$-cycle 69, so their tensor products
 generate many distinct parameter combinations. The tori
 involving $k = 2$ are the sparsest, because the $2$-cycle
 carries only three signatures, at $N_{\min} \in \{2, 24, 24\}$.
+
+Note the 1D grid search stops at $N \le 60$, while the 2D
+classification extends to $N \le 420$. 
+The 2D enumeration is built from the catalogued 1D
+signatures, whose periods are all at most $60$, and a 2D period is
+either one of those periods or a combination of a pair of them.
+The 2D scan therefore inherits the 1D catalogue rather than
+re-searching 1D at larger $N$; periods above $60$ arise only as
+combinations of 1D revival periods.
