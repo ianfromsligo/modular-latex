@@ -1,0 +1,72 @@
+
+==============================================================================
+EXHAUSTIVE SWEEP — SUMMARY (v6.1)
+==============================================================================
+
+k = 7
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.500000, delta=1.570796
+  projective revivals found: 0
+
+k = 9
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.750000, delta=5.235988
+  projective revivals found: 0
+
+k = 11
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.500000, delta=4.712389
+  projective revivals found: 0
+
+k = 12
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.985000, delta=2.094395
+  projective revivals found: 0
+
+k = 13
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.500000, delta=4.712389
+  projective revivals found: 0
+
+k = 14
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.500000, delta=4.712389
+  projective revivals found: 0
+
+k = 15
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.155000, delta=2.513274
+  projective revivals found: 0
+
+k = 16
+  grid: 201 rho x 76 delta = 15,276 points  (550 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 550 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.705000, delta=4.712389
+  projective revivals found: 0
+
+------------------------------------------------------------------------------
+TOTAL across 8 k values: 0 catalogue, 0 new, 0 unconfirmed; 4,400 trivial endpoints skipped
+  All confirmed revivals are in ONE_D_FULL. No spurious candidates. Classification clean.
