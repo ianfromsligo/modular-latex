@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# update_repo.sh — refresh the paper, notebooks, data, and figures in the
-# separable_quantum_walk_tori repo from the modular LaTeX working tree.
+# update_repo.sh — refresh the paper, notebooks, data, figures, and tables in
+# the separable_quantum_walk_tori repo from the modular LaTeX working tree.
 #
 # Run from ~/src/latex after rebuilding the paper:
 #
@@ -25,6 +25,7 @@ NOTEBOOK_033="${SRC_LATEX}/docs/sep-coin-tori/data/EXP033.ipynb"
 NOTEBOOK_032B="${SRC_LATEX}/docs/sep-coin-tori/data/EXP032b.ipynb"
 DATA_OUT_033="${SRC_LATEX}/docs/sep-coin-tori/data/EXP033_outputs"
 DATA_OUT_032B="${SRC_LATEX}/docs/sep-coin-tori/data/EXP032b_outputs"
+COMPONENTS_TABLES="${SRC_LATEX}/docs/sep-coin-tori/components/tables"
 
 DST_PAPER="${DST}/paper"
 DST_NOTEBOOK="${DST}/notebook"
@@ -111,8 +112,10 @@ done
 # EXP032b outputs: all exhaustive-report variants plus the quick summary
 shopt -s nullglob
 for f in "${DATA_OUT_032B}"/exhaustive_report_*.txt "${DATA_OUT_032B}"/exhaustive_quick.txt; do
-  cp "${f}" "${DST_DATA}/"
-  echo "  data/$(basename "${f}")"
+  if [[ -f "${f}" ]]; then
+    cp "${f}" "${DST_DATA}/"
+    echo "  data/$(basename "${f}")"
+  fi
 done
 shopt -u nullglob
 
@@ -120,6 +123,29 @@ shopt -u nullglob
 for f in 2d_classification.csv 2d_classification_full.csv; do
   [[ -f "${DST_DATA}/${f}" ]] && rm "${DST_DATA}/${f}" && echo "  removed stale data/${f}"
 done
+
+# ---------------------------------------------------------------------------
+# Tables — gather per-table .tex fragments from components/tables/<name>/<name>.tex
+# into data/, then copy them into paper/
+# ---------------------------------------------------------------------------
+
+echo "Collecting tables into data/..."
+
+shopt -s nullglob
+for tex in "${COMPONENTS_TABLES}"/*/*.tex; do
+  cp "${tex}" "${DST_DATA}/"
+  echo "  data/$(basename "${tex}")"
+done
+shopt -u nullglob
+
+echo "Copying tables into paper/..."
+
+shopt -s nullglob
+for tex in "${DST_DATA}"/tab-*.tex; do
+  cp "${tex}" "${DST_PAPER}/"
+  echo "  paper/$(basename "${tex}")"
+done
+shopt -u nullglob
 
 # ---------------------------------------------------------------------------
 # Figures
