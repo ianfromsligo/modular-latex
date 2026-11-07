@@ -1,0 +1,24 @@
+
+==============================================================================
+EXHAUSTIVE SWEEP — SUMMARY (v6.1)
+==============================================================================
+
+k = 15
+  grid: 1001 rho x 360 delta = 360,360 points  (2,718 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 2,718 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.500000, delta=3.560472
+  projective revivals found: 0
+
+k = 16
+  grid: 1001 rho x 360 delta = 360,360 points  (2,718 trivial endpoints skipped)
+  confirmed revivals found: 0  (0 catalogue, 0 new; 2,718 trivial endpoints skipped)
+  (no catalogue or new exact revivals on this grid)
+  worst exact residual over grid: 2.00e+00
+    at rho=0.629000, delta=1.570796
+  projective revivals found: 0
+
+------------------------------------------------------------------------------
+TOTAL across 2 k values: 0 catalogue, 0 new, 0 unconfirmed; 5,436 trivial endpoints skipped
+  All confirmed revivals are in ONE_D_FULL. No spurious candidates. Classification clean.

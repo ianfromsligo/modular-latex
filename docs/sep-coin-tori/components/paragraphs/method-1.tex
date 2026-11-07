@@ -35,7 +35,13 @@ point, and the eigenvalue residual $\max_j |\lambda_j^N - 1|$
 is evaluated for every $N$. Grid points that pass the tolerance
 are recorded as \emph{candidate revivals}. Each candidate is
 then refined: its parameters are snapped to the nearest
-algebraic value, the exact period is confirmed by a direct
+algebraic value, Snapping moves the point by at most $10^{-3}$ in $\rho$ and
+$10^{-3}$ in $\delta/\pi$, and the snapped point must then pass
+a stricter check than the detection threshold: $10^{-12}$ on the
+eigenvalue residual and $10^{-10}$ on the matrix-power residual,
+against the $10^{-9}$ used for detection. Candidates that fail
+refinement are reported as \texttt{unconfirmed} and treated as a
+bug rather than a result.  the exact period is confirmed by a direct
 matrix-power check $\|U^N - I\| < 10^{-10}$, and the confirmed
 revival is classified as trivial, Dukes-tabulated, or new.
 Trivial revivals are those at the degenerate parameter values
