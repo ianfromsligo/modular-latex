@@ -105,11 +105,11 @@ sections:
   - docs/sep-coin-tori/components/paragraphs/disc-1-2
   - docs/sep-coin-tori/components/paragraphs/disc-delta
   - docs/sep-coin-tori/components/paragraphs/disc-10x10-1
-  - docs/sep-coin-tori/components/figures/fig-10x10-fidelity
-  - docs/sep-coin-tori/components/paragraphs/disc-10x10-2
   - docs/sep-coin-tori/components/figures/fig-10x10-probability
-  - docs/sep-coin-tori/components/paragraphs/disc-10x10-3
+  - docs/sep-coin-tori/components/figures/fig-10x10-fidelity
   - docs/sep-coin-tori/components/figures/fig-10x10-spin
+  - docs/sep-coin-tori/components/paragraphs/disc-10x10-2
+  - docs/sep-coin-tori/components/paragraphs/disc-10x10-3
 - title: Conclusion
   label: conclusion
   components:
