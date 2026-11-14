@@ -1,0 +1,89 @@
+template: thesis-report
+
+metadata:
+  title: "Placeholder Thesis Title"
+  authors:
+  - name: Your Name
+    email: your.email@example.ie
+    affiliation: Atlantic Technological University, Sligo, Ireland
+  abstract: |
+    Placeholder abstract. Replace this with the real thesis abstract.
+    This thesis studies quantum revivals on coin tori, building on the
+    separable-coin classification and extending toward non-separable cases.
+  date: today
+  bibliographystyle: plain
+  bibliography: docs/thesis-coin-tori/references.bib
+
+prelude:
+- title: Glossary
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/glossary
+- title: Abbreviations
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/abbreviations
+
+sections:
+- title: Introduction I
+  label: intro1
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_intro1
+- title: Introduction II
+  label: intro2
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_intro2
+- title: Introduction III
+  label: intro3
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_intro3
+- title: Introduction IV
+  label: intro4
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_intro4
+- title: Introduction V
+  label: intro5
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_intro5
+
+- title: Mathematical Foundations I
+  label: maths1
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_maths1
+- title: Mathematical Foundations II
+  label: maths2
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_maths2
+- title: Mathematical Foundations III
+  label: maths3
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_maths3
+- title: Mathematical Foundations IV
+  label: maths4
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_maths4
+- title: Mathematical Foundations V
+  label: maths5
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_maths5
+
+- title: Revivals on Separable Coin Tori
+  label: revivals-separable
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_revivals_separable
+- title: Revivals on Non-Separable Tori
+  label: revivals-nonseparable
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_revivals_nonseparable
+
+- title: Discussion
+  label: discussion
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_discussions
+- title: Conclusions and Further Work
+  label: conclusions
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_conclusions
+
+postlude:
+- title: Appendix
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/appendix
