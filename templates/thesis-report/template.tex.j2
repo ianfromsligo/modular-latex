@@ -1,0 +1,107 @@
+\documentclass[oneside,12pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{nicefrac}
+\usepackage{longtable}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\raggedbottom
+
+% Search paths so components can use repo-root-relative \input paths
+\makeatletter
+\def\input@path{{../}{../docs/<<- manifest._doc_name ->>/components/}{../docs/<<- manifest._doc_name ->>/components/paragraphs/}{../docs/<<- manifest._doc_name ->>/components/equations/}{../docs/<<- manifest._doc_name ->>/components/tables/}{../docs/<<- manifest._doc_name ->>/components/figures/}}
+\makeatother
+\graphicspath{{../}{../docs/<<- manifest._doc_name ->>/components/figures/}}
+
+\title{ <<- manifest.metadata.title ->> }
+<%- for a in manifest.metadata.authors %>
+\author{ <<- a.name >>
+<%- if a.affiliation %>
+\\\small <<- a.affiliation ->>
+<%- endif %>
+<%- if a.email %>
+\\\texttt{<<- a.email ->>
+<%- endif %>
+}
+<%- endfor %>
+<%- if manifest.metadata.date == "today" %>
+\date{\today}
+<%- elif manifest.metadata.date %>
+\date{ <<- manifest.metadata.date ->> }
+<%- else %>
+\date{\today}
+<%- endif %>
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+<<- manifest.metadata.abstract >>
+\end{abstract}
+
+\tableofcontents
+
+% --- Front matter (unnumbered): Glossary, Abbreviations, etc. ---
+<%- if manifest.prelude %>
+<%- for section in manifest.prelude %>
+\chapter*{ <<- section.title ->> }
+\addcontentsline{toc}{chapter}{ <<- section.title ->> }
+<%- for comp in section.components %>
+\par
+<< emit(comp) ->>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+
+% --- Main body: numbered chapters ---
+<%- for section in manifest.sections %>
+\chapter{ <<- section.title ->> }
+\label{chap:<<- section.label ->>}
+<%- if section.subsections %>
+<%- for sub in section.subsections %>
+\section{ <<- sub.title ->> }
+<%- for comp in sub.components %>
+\par
+<< emit(comp) ->>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+<%- if section.components %>
+<%- for comp in section.components %>
+\par
+<< emit(comp) ->>
+<%- endfor %>
+<%- endif %>
+<%- endfor %>
+
+% --- Back matter (unnumbered): Appendix, Acknowledgments ---
+<%- if manifest.postlude %>
+<%- for section in manifest.postlude %>
+\chapter*{ <<- section.title ->> }
+\addcontentsline{toc}{chapter}{ <<- section.title ->> }
+<%- for comp in section.components %>
+\par
+<< emit(comp) ->>
+<%- endfor %>
+<%- endfor %>
+<%- endif %>
+
+\bibliographystyle{ <<- manifest.metadata.bibliographystyle ->> }
+\bibliography{ <<- manifest.metadata.bibliography | replace('.bib','') | basename ->> }
+
+\end{document}

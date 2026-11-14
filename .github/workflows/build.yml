@@ -3,7 +3,18 @@ name: Build Documents
 "on":
   push:
     branches: [main]
-  pull_request: {}
+    paths:
+      - 'docs/thesis-coin-tori/**'
+      - 'templates/thesis-report/**'
+      - 'build.py'
+      - 'requirements.txt'
+      - '.github/workflows/build.yml'
+  pull_request:
+    paths:
+      - 'docs/thesis-coin-tori/**'
+      - 'templates/thesis-report/**'
+      - 'build.py'
+      - 'requirements.txt'
   workflow_dispatch: {}
 
 jobs:
@@ -12,12 +23,20 @@ jobs:
     outputs:
       docs: ${{ steps.list.outputs.docs }}
     steps:
-      - uses: actions/checkout@v4
       - id: list
         run: |
-          docs=$(ls -d docs/*/ | xargs -n1 basename | grep -v '^archive$' | jq -R -s -c 'split("\n")[:-1]')
+          # Only the thesis is built right now.
+          # Uncomment a line below to re-enable that doc.
+          DOCS=(
+            "thesis-coin-tori"
+            # "sep-coin-tori"
+            # "sample-experiment"
+            # "sample-labnote"
+            # "revtex-pra-sample"
+          )
+          docs=$(printf '%s\n' "${DOCS[@]}" | jq -R -s -c 'split("\n")[:-1]')
           echo "docs=$docs" >> "$GITHUB_OUTPUT"
-          echo "discovered docs: $docs"
+          echo "docs to build: $docs"
 
   build:
     needs: discover
