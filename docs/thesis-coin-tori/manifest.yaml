@@ -18,6 +18,12 @@ prelude:
 - title: Glossary
   components:
   - docs/thesis-coin-tori/components/paragraphs/glossary
+- title: List of Figures
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/list_of_figures
+- title: List of Tables
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/list_of_tables
 - title: Abbreviations
   components:
   - docs/thesis-coin-tori/components/paragraphs/abbreviations
