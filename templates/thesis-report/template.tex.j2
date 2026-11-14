@@ -29,16 +29,8 @@
 
 \title{ <<- manifest.metadata.title ->> }
 <%- for a in manifest.metadata.authors %>
-<%- set author_line = a.name -%}
-<%- if a.affiliation -%}
-<%- set author_line = author_line ~ '\\\small ' ~ a.affiliation -%}
-<%- endif -%}
-<%- if a.email -%}
-<%- set author_line = author_line ~ '\\\texttt{' ~ a.email ~ '}' -%}
-<%- endif %>
-\author{<< author_line >>}
+\author{<< a.name >><% if a.affiliation %>\\\small << a.affiliation >><% endif %><% if a.email %>\\\texttt{<< a.email >><% endif %>}
 <%- endfor %>
-
 <%- if manifest.metadata.date == "today" %>
 \date{\today}
 <%- elif manifest.metadata.date %>
