@@ -14,67 +14,22 @@ metadata:
   bibliographystyle: plain
   bibliography: docs/thesis-coin-tori/references.bib
 
-prelude:
-- title: Glossary
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/glossary
-- title: List of Figures
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/list_of_figures
-- title: List of Tables
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/list_of_tables
-- title: Abbreviations
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/abbreviations
-
 sections:
-- title: Introduction I
-  label: intro1
+- title: Introduction
+  label: intro
   components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_intro1
-- title: Introduction II
-  label: intro2
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_intro2
-- title: Introduction III
-  label: intro3
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_intro3
-- title: Introduction IV
-  label: intro4
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_intro4
-- title: Introduction V
-  label: intro5
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_intro5
+  - docs/thesis-coin-tori/components/paragraphs/chapter_intro
 
-- title: Mathematical Foundations I
-  label: maths1
+- title: Mathematical Framework
+  label: maths
   components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_maths1
-- title: Mathematical Foundations II
-  label: maths2
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_maths2
-- title: Mathematical Foundations III
-  label: maths3
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_maths3
-- title: Mathematical Foundations IV
-  label: maths4
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_maths4
-- title: Mathematical Foundations V
-  label: maths5
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_maths5
+  - docs/thesis-coin-tori/components/paragraphs/chapter_maths
 
 - title: Revivals on Separable Coin Tori
   label: revivals-separable
   components:
   - docs/thesis-coin-tori/components/paragraphs/chapter_revivals_separable
+
 - title: Revivals on Non-Separable Tori
   label: revivals-nonseparable
   components:
@@ -83,11 +38,17 @@ sections:
 - title: Discussion
   label: discussion
   components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_discussions
+  - docs/thesis-coin-tori/components/paragraphs/chapter_discussion
+
 - title: Conclusions and Further Work
   label: conclusions
   components:
   - docs/thesis-coin-tori/components/paragraphs/chapter_conclusions
+
+- title: References
+  label: references
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/chapter_references
 
 postlude:
 - title: Appendix
