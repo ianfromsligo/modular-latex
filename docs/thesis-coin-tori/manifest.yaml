@@ -33,11 +33,6 @@ sections:
   components:
   - docs/thesis-coin-tori/components/paragraphs/chapter_intro
 
-- title: A Taxonomy of Revivals in Quantum Walks
-  label: taxonomy
-  components:
-  - docs/thesis-coin-tori/components/paragraphs/chapter_taxonomy
-
 - title: Mathematical Framework
   label: maths
   components:
@@ -67,7 +62,6 @@ sections:
   label: references
   components:
   - docs/thesis-coin-tori/components/paragraphs/chapter_references
-
 
 postlude:
 - title: Appendix
