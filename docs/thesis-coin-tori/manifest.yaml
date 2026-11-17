@@ -14,6 +14,19 @@ metadata:
   bibliographystyle: plain
   bibliography: docs/thesis-coin-tori/references.bib
 
+prelude:
+- title: Glossary
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/glossary
+
+- title: List of Figures
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/list_of_figures
+
+- title: List of Tables
+  components:
+  - docs/thesis-coin-tori/components/paragraphs/list_of_tables
+
 sections:
 - title: Introduction
   label: intro
