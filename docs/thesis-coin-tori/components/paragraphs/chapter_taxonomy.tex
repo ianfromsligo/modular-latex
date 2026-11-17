@@ -1,0 +1,79 @@
+% Chapter body only — the template emits \chapter{A Taxonomy of Revivals in Quantum Walks}.
+% Replace/extend the placeholder prose below. Keep \chapter{} out of this file.
+
+\section{Why a taxonomy is needed}
+The literature on revivals in quantum walks uses overlapping and sometimes
+inconsistent terminology. ``Revival'', ``periodicity'', ``recurrence'', and
+``return'' are all used, often for subtly different notions. This chapter
+fixes vocabulary for the rest of the thesis.
+
+\section{Revival types}
+\subsection{Exact revivals}
+% Model definition:
+% A walk $U$ acting on state $\psi_0$ exhibits an \emph{exact revival} at
+% time $t > 0$ if $U^t \psi_0 = \psi_0$ up to a global phase.
+
+\subsection{Approximate revivals}
+% Model definition:
+% A walk exhibits an \emph{approximate revival} at time $t$ to tolerance
+% $\epsilon$ if $\lVert U^t \psi_0 - \psi_0 \rVert < \epsilon$.
+
+\subsection{Fractional revivals}
+% Model definition:
+% A walk exhibits a \emph{fractional revival} at time $t$ if $U^t \psi_0$
+% is supported on a strict subset of the initial support, with the
+% non-zero amplitudes matching the initial ones up to phases.
+
+\subsection{Periodic revivals}
+% Model definition:
+% A walk is \emph{periodic} on a subspace if exact revivals occur at a
+% fixed period $T$ for every state in that subspace.
+
+\section{What is revived}
+\subsection{State revivals}
+% Model definition:
+% The full state vector returns: $U^t \psi_0 = e^{i\theta} \psi_0$.
+
+\subsection{Probability revivals}
+% Model definition:
+% Only the position distribution returns:
+% $|(U^t \psi_0)(x)|^2 = |\psi_0(x)|^2$ for all $x$, with arbitrary
+% phases on each amplitude.
+
+\subsection{Operator revivals}
+% Model definition:
+% The evolution operator itself returns:
+% $U^t = e^{i\theta} I$ on the relevant subspace.
+
+\section{The graph}
+\subsection{Revivals on 1D cycles}
+% Model definition:
+% The graph is $C_N$, a cycle of length $N$, with a 2-state coin.
+
+\subsection{Revivals on 2D tori: separable vs.\ non-separable coins}
+% Model definition:
+% The graph is $C_N \times C_M$. A separable coin factorises as
+% $C = C_x \otimes C_y$; a non-separable coin does not.
+
+\section{A unified classification}
+% TODO: big table summarising the taxonomy.
+% Rows = revival type (exact / approximate / fractional / periodic)
+% Columns = what is revived (state / probability / operator),
+%           graph (cycle / torus), coin (separable / non-separable),
+%           what the literature calls it.
+%
+% Example skeleton:
+%
+% \begin{table}[htbp]
+%   \centering
+%   \caption{A unified classification of quantum walk revivals.}
+%   \label{tab:taxonomy}
+%   \begin{tabular}{@{}llll@{}}
+%     \toprule
+%     Revival type & What revives & Graph & Literature term \\
+%     \midrule
+%     Exact    & State       & Cycle & ``full revival'' (Dukes) \\
+%     ...      & ...         & ...   & ... \\
+%     \bottomrule
+%   \end{tabular}
+% \end{table}
