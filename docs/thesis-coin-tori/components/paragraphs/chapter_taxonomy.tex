@@ -1,1 +1,164 @@
-% taxonomy placeholder
+% Chapter body only — the template emits \chapter{A Taxonomy of Revivals in Quantum Walks}.
+% Do NOT add \chapter{} here.
+
+\section{Why a taxonomy is needed}
+In the published work to date on DTWQs on revivals,  we see terms such as Perfect-state Revival, Full-state revival,
+exact revival, revival, partial revival, recurrence and return used.
+This chapter fixes
+vocabulary for the rest of the thesis. We separate revivals along three
+independent axes — \emph{what} revives, \emph{how completely} it revives,
+and \emph{on what graph} it revives — and record how each notion in the
+existing literature maps onto this scheme.
+
+\section{Revival types}
+We distinguish four notions of revival, ordered from strongest to weakest.
+Each is a property of a unitary walk operator $U$ acting on an initial
+state $\psi_0$.
+
+\subsection{Exact revivals}
+\begin{definition}[Exact revival]\label{def:exact-revival}
+A walk $U$ acting on state $\psi_0$ exhibits an \emph{exact revival} at
+time $t > 0$ if
+\[
+  U^t \psi_0 = e^{i\theta} \psi_0
+\]
+for some global phase $\theta \in \mathbb{R}$.
+\end{definition}
+The global phase is essential: a revival is a return of the state
+\emph{up to} an unobservable phase. Requiring $\theta = 0$ exactly would
+exclude physically indistinguishable states and is not the convention in
+the literature.
+
+\subsection{Approximate revivals}
+\begin{definition}[Approximate revival]\label{def:approx-revival}
+A walk exhibits an \emph{approximate revival} at time $t$ to tolerance
+$\epsilon > 0$ if
+\[
+  \lVert U^t \psi_0 - e^{i\theta} \psi_0 \rVert < \epsilon
+\]
+for some $\theta \in \mathbb{R}$.
+\end{definition}
+Approximate revivals are the natural notion when the walk is perturbed,
+or when the graph is too large for exact revivals to occur on reasonable
+time scales. The tolerance $\epsilon$ is part of the definition, not an
+afterthought: a statement of the form ``this walk approximately revives''
+is incomplete without it.
+
+\subsection{Fractional revivals}
+\begin{definition}[Fractional revival]\label{def:fractional-revival}
+A walk exhibits a \emph{fractional revival} at time $t$ if $U^t \psi_0$
+is supported on a strict subset of the support of $\psi_0$, and the
+non-zero amplitudes of $U^t \psi_0$ match those of $\psi_0$ up to phases.
+\end{definition}
+Fractional revivals are weaker than exact revivals: part of the state
+returns, part does not. They appear naturally in walks with symmetry, where
+the state decomposes into invariant subspaces that revive at different
+periods.
+
+\subsection{Periodic revivals}
+\begin{definition}[Periodic revival]\label{def:periodic-revival}
+A walk is \emph{periodic} on a subspace $\mathcal{H}' \subseteq \mathcal{H}$
+if there exists $T > 0$ such that every $\psi \in \mathcal{H}'$ exhibits an
+exact revival at $t = T$.
+\end{definition}
+Periodicity is a property of the walk, not of a single state. A walk may be
+periodic on a subspace without being periodic on the full Hilbert space,
+and the period $T$ may depend on the subspace.
+
+\section{What is revived}
+The definitions above do not specify \emph{what} returns. Three answers
+appear in the literature.
+
+\subsection{State revivals}
+\begin{definition}[State revival]\label{def:state-revival}
+A \emph{state revival} is an exact revival in the sense of
+Definition~\ref{def:exact-revival}: the full state vector returns up to a
+global phase.
+\end{definition}
+This is the strongest notion and the one most commonly meant by
+``revival'' in the mathematical literature.
+
+\subsection{Probability revivals}
+\begin{definition}[Probability revival]\label{def:probability-revival}
+A walk exhibits a \emph{probability revival} at time $t$ if
+\[
+  |(U^t \psi_0)(x)|^2 = |\psi_0(x)|^2
+\]
+for all vertices $x$, with arbitrary phases on each amplitude.
+\end{definition}
+Probability revivals are weaker than state revivals: the position
+distribution returns, but the phases may differ. They are the relevant
+notion for experiments that measure only position.
+
+\subsection{Operator revivals}
+\begin{definition}[Operator revival]\label{def:operator-revival}
+A walk exhibits an \emph{operator revival} at time $t$ if
+\[
+  U^t = e^{i\theta} I
+\]
+on the relevant subspace.
+\end{definition}
+Operator revivals are stronger than state revivals: every state revives
+simultaneously. They are equivalent to periodicity of the walk on the
+subspace in question.
+
+\section{The graph}
+The graph on which the walk evolves determines which revivals are possible.
+We consider two families.
+
+\subsection{Revivals on 1D cycles}
+\begin{definition}[Cycle walk]\label{def:cycle-walk}
+A \emph{cycle walk} is a discrete-time quantum walk on the cycle $C_N$ of
+length $N$, with a two-state coin.
+\end{definition}
+The 1D case is the best understood: Dukes~\cite{Dukes2014} classified exact
+revivals on cycles, and the classification is complete within the search
+bounds used there.
+
+\subsection{Revivals on 2D tori}
+\begin{definition}[Torus walk]\label{def:torus-walk}
+A \emph{torus walk} is a discrete-time quantum walk on the Cartesian
+product $C_N \times C_M$, with a four-state coin that may or may not
+factorise.
+\end{definition}
+\begin{definition}[Separable coin]\label{def:separable-coin}
+A four-state coin $C$ is \emph{separable} if it factorises as
+$C = C_x \otimes C_y$, where $C_x$ and $C_y$ are two-state coins acting on
+the $x$- and $y$-components respectively.
+\end{definition}
+Separable coins are the natural first generalisation of the 1D case: a
+separable walk on $C_N \times C_M$ factorises as a tensor product of two 1D
+walks, so its revivals can be understood in terms of the revivals of the
+factors. Non-separable coins do not factorise, and their revival structure
+is correspondingly richer and less understood.
+
+\section{A unified classification}
+Table~\ref{tab:taxonomy} summarises the taxonomy. Each row corresponds to a
+revival type, and the columns record what revives, on what graph, and what
+the existing literature calls the notion.
+
+\begin{table}[htbp]
+  \centering
+  \caption{A unified classification of quantum walk revivals.}
+  \label{tab:taxonomy}
+  \begin{tabular}{@{}p{2.3cm}p{2.2cm}p{2.2cm}p{3.8cm}@{}}
+    \toprule
+    Revival type & What revives & Graph & Literature term \\
+    \midrule
+    Exact        & State        & Cycle         & ``full revival'' (Dukes) \\
+    Exact        & State        & Torus, sep.   & ``separable revival'' \\
+    Exact        & State        & Torus, non-sep. & open \\
+    Approximate  & State        & Any           & ``near revival'' \\
+    Fractional   & Partial state & Any          & ``partial revival'' \\
+    Periodic     & Whole subspace & Any         & ``periodic walk'' \\
+    Probability  & Distribution & Any           & ``distributional revival'' \\
+    Operator     & Operator     & Any           & ``operator revival'' \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The table is deliberately open-ended: rows for non-separable tori are
+currently marked ``open'', and filling them in is one of the contributions
+of this thesis. Table~\ref{tab:taxonomy} will also appear in the List of
+Tables once the PDF is built, and it is intended as the reference point for
+the terminology used in Chapters~\ref{chap:maths}--\ref{chap:revivals-nonseparable}.
