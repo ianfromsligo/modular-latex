@@ -52,7 +52,7 @@
 
 \tableofcontents
 
-% --- Front matter (unnumbered): Glossary, Abbreviations, etc. ---
+<# Front matter (unnumbered): Glossary, Abbreviations, etc. #>
 <%- if manifest.prelude %>
 <%- for section in manifest.prelude %>
 \chapter*{ <<- section.title ->> }
@@ -64,7 +64,7 @@
 <%- endfor %>
 <%- endif %>
 
-% --- Main body: numbered chapters ---
+<# Main body: numbered chapters #>
 <%- for section in manifest.sections %>
 \chapter{ <<- section.title ->> }
 \label{chap:<<- section.label ->>}
@@ -85,7 +85,7 @@
 <%- endif %>
 <%- endfor %>
 
-% --- Back matter (unnumbered): Appendix, Acknowledgments ---
+<# Back matter (unnumbered): Appendix, Acknowledgments #>
 <%- if manifest.postlude %>
 <%- for section in manifest.postlude %>
 \chapter*{ <<- section.title ->> }
