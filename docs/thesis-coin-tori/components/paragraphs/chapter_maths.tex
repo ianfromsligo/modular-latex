@@ -1,1 +1,183 @@
 % maths placeholder
+% Chapter body only — the template emits \chapter{Mathematical Framework}.
+% Derived from Sections II.A–II.C of the PRA submission.
+
+\section{The discrete-time quantum walk}
+The single-step evolution of the walker in a discrete-time quantum walk
+(DTQW) is governed by the unitary operator
+\begin{equation}
+  U = S\,(I_p \otimes C),
+  \label{eq:general-evolution}
+\end{equation}
+where $I_p$ denotes the identity on the position space, $C$ is the coin
+operator acting on the internal degree of freedom, and $S$ is the conditional
+shift operator that entangles positions and coin by displacing the walker
+according to its coin state.
+
+\section{The 1D parametrised coin}
+On a 1D cycle, Dukes~\cite{Dukes2014} introduced the parametrised coin
+operator
+\begin{equation}
+  C(\rho,\delta) =
+  \begin{pmatrix}
+    \sqrt{\rho} & \sqrt{1-\rho}\,e^{i\delta} \\
+    \sqrt{1-\rho}\,e^{-i\delta} & -\sqrt{\rho}
+  \end{pmatrix},
+  \label{eq:1d-coin}
+\end{equation}
+where $\rho \in [0,1]$ controls the spatial splitting ratio and
+$\delta \in [0, 2\pi)$ governs the relative phase accumulated between
+divergent paths. The phase $\delta$ does not enter the trace of the
+single-step operator and therefore does not affect the eigenphase
+spectrum, so the revival period depends only on $\rho$. Setting
+$\rho = \tfrac{1}{2}$ and $\delta = 0$ recovers the Hadamard coin
+\begin{equation}
+  C\!\left(\tfrac{1}{2}, 0\right) = \frac{1}{\sqrt{2}}
+  \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = H.
+  \label{eq:hadamard-coin}
+\end{equation}
+
+\section{The separable coin on a torus}
+The construction extends to a $k \times m$ toroidal lattice with total
+Hilbert space
+$\mathcal{H} = \mathcal{H}_{p_x} \otimes \mathcal{H}_{c_x} \otimes
+\mathcal{H}_{p_y} \otimes \mathcal{H}_{c_y}$.
+The position space
+$\mathcal{H}_{p_x} \otimes \mathcal{H}_{p_y}$ is spanned by
+$\{\ket{x,y} : x \in \mathbb{Z}_k,\, y \in \mathbb{Z}_m\}$ with periodic
+boundary conditions along both axes, and the coin space
+$\mathcal{H}_{c_x} \otimes \mathcal{H}_{c_y} \cong \mathbb{C}^4$ carries
+the directional basis
+\begin{equation}
+  \ket{LD},\ \ket{LU},\ \ket{RD},\ \ket{RU},
+  \label{eq:basis-order}
+\end{equation}
+where $L,R$ denote displacements along the $x$-axis and $D,U$ along the
+$y$-axis.
+
+A separable coin factorises as
+$C_{k\times m} = C_x(\rho_x,\delta_x) \otimes C_y(\rho_y,\delta_y)$
+with independent 1D parameters on each axis. In the ordered basis
+\eqref{eq:basis-order}, the matrix representation is
+\begin{equation}
+  C_{k\times m} =
+  \begin{pmatrix}
+    \sqrt{\rho_x\rho_y} & \sqrt{\rho_x(1-\rho_y)}\,e^{i\delta_y} &
+      \sqrt{(1-\rho_x)\rho_y}\,e^{i\delta_x} &
+      \sqrt{(1-\rho_x)(1-\rho_y)}\,e^{i(\delta_x+\delta_y)} \\
+    \sqrt{\rho_x(1-\rho_y)}\,e^{-i\delta_y} &
+      -\sqrt{\rho_x\rho_y} &
+      \sqrt{(1-\rho_x)(1-\rho_y)}\,e^{i(\delta_x-\delta_y)} &
+      -\sqrt{(1-\rho_x)\rho_y}\,e^{i\delta_x} \\
+    \sqrt{(1-\rho_x)\rho_y}\,e^{-i\delta_x} &
+      \sqrt{(1-\rho_x)(1-\rho_y)}\,e^{-i(\delta_x-\delta_y)} &
+      -\sqrt{\rho_x\rho_y} &
+      -\sqrt{\rho_x(1-\rho_y)}\,e^{i\delta_y} \\
+    \sqrt{(1-\rho_x)(1-\rho_y)}\,e^{-i(\delta_x+\delta_y)} &
+      -\sqrt{\rho_x(1-\rho_y)}\,e^{-i\delta_y} &
+      -\sqrt{(1-\rho_x)\rho_y}\,e^{-i\delta_x} &
+      \sqrt{\rho_x\rho_y}
+  \end{pmatrix}.
+  \label{eq:full-4x4-coin-matrix}
+\end{equation}
+The trace contains only expressions in $\rho_x$ and $\rho_y$, so the
+revival period depends only on the reflection parameters.
+
+\section{Shift operators}
+The conditional shifts along the two axes are
+\begin{align}
+  S_x &= \sum_{x \in \mathbb{Z}_k}
+    \bigl(\ket{x-1}\bra{x} \otimes \ket{L}\bra{L}
+      + \ket{x+1}\bra{x} \otimes \ket{R}\bra{R}\bigr) \otimes I_y,
+  \label{eq:shift-x} \\
+  S_y &= I_x \otimes \sum_{y \in \mathbb{Z}_m}
+    \bigl(\ket{y-1}\bra{y} \otimes \ket{D}\bra{D}
+      + \ket{y+1}\bra{y} \otimes \ket{U}\bra{U}\bigr),
+  \label{eq:shift-y}
+\end{align}
+with all index shifts understood modulo $k$ and $m$ respectively.
+
+\section{Factorisation}
+The separability of the coin and the orthogonality of the axes yield a
+tensor-product factorisation of the full unitary. Reordering the total
+Hilbert space as
+$\mathcal{H} = (\mathcal{H}_{p_x} \otimes \mathcal{H}_{c_x}) \otimes
+(\mathcal{H}_{p_y} \otimes \mathcal{H}_{c_y})$, the single-step operator
+factorises as
+\begin{equation}
+  U_{k\times m} = U_k \otimes U_m,
+  \label{eq:factorised-unitary}
+\end{equation}
+where $U_k = S_x(I_k \otimes C_x)$ and $U_m = S_y(I_m \otimes C_y)$ are
+independent 1D evolution operators on the $x$- and $y$-cycles. The
+factorisation isolates the spectral constraints along each axis, so the
+root-of-unity conditions that govern revivals can be evaluated
+dimension-by-dimension.
+
+\section{Revivals: definitions}
+A \emph{projective revival} at period $N$ is a return of the state up to
+an unobservable global phase, $U^N = e^{i\phi} I$. An \emph{exact} or
+\emph{full-state revival} is a return with no phase, $U^N = I$. In this
+thesis we classify exact revivals; projective revivals are noted where
+they occur but are not the object of the classification.
+
+A torus revival requires the sum of the two axis phases to be zero. When
+both axes revive at a common step, the sum vanishes at the least common
+multiple of the two axis periods; but two nonzero phases of opposite sign
+can also sum to zero at a step where neither axis has revived on its own,
+giving a torus revival at a period shorter than the LCM of the two axis
+periods.
+
+\section{A worked example}
+\label{sec:worked-step}
+To illustrate the separable walk, consider a single step on a
+$3\times 3$ torus with $\rho_x = \rho_y = 2/3$ and $\delta_x = \delta_y = 0$.
+The walker begins at the origin in coin state $\ket{RU}$. The 1D coin is
+\begin{equation}
+  C\!\left(\tfrac{2}{3}, 0\right) =
+  \begin{pmatrix}
+    \sqrt{2/3} & \sqrt{1/3} \\
+    \sqrt{1/3} & -\sqrt{2/3}
+  \end{pmatrix},
+\end{equation}
+acting on the basis $\{\ket{L},\ket{R}\}$ on the $x$-axis and analogously
+on the $y$-axis. Its action on the initial state is
+\begin{align}
+  C_x\ket{R} &= \sqrt{1/3}\ket{L} - \sqrt{2/3}\ket{R}, \\
+  C_y\ket{U} &= \sqrt{1/3}\ket{D} - \sqrt{2/3}\ket{U},
+\end{align}
+so that the tensor product $C_x \otimes C_y$ produces the post-coin
+superposition
+\begin{equation}
+  (C_x \otimes C_y)\ket{RU} =
+    \tfrac{1}{3}\ket{LD}
+    - \tfrac{\sqrt{2}}{3}\ket{LU}
+    - \tfrac{\sqrt{2}}{3}\ket{RD}
+    + \tfrac{2}{3}\ket{RU}.
+  \label{eq:worked-coin-output}
+\end{equation}
+The conditional shift $S = S_x S_y$ then displaces each branch by one
+site in the direction indicated by the coin state, mapping the four basis
+states on the $3\times 3$ torus as
+\begin{align*}
+  \ket{LD} &: (0,0) \to (2,2), \\
+  \ket{LU} &: (0,0) \to (2,1), \\
+  \ket{RD} &: (0,0) \to (1,2), \\
+  \ket{RU} &: (0,0) \to (1,1).
+\end{align*}
+The resulting state
+\begin{equation}
+  \ket{\psi_1} =
+    \tfrac{1}{3}\ket{2,2}\ket{LD}
+    - \tfrac{\sqrt{2}}{3}\ket{2,1}\ket{LU}
+    - \tfrac{\sqrt{2}}{3}\ket{1,2}\ket{RD}
+    + \tfrac{2}{3}\ket{1,1}\ket{RU}
+  \label{eq:worked-shifted-state}
+\end{equation}
+is entangled in position$\otimes$coin, with the norm preserved:
+$\braket{\psi_1|\psi_1} = \tfrac{1}{9}+\tfrac{2}{9}+\tfrac{2}{9}+\tfrac{4}{9}=1$.
+Two features stand out: position and coin are entangled after a single
+shift, reflecting the correlation the separable coin introduces; and
+unlike the Hadamard case $\rho=1/2$, the split is asymmetric — the
+$\ket{RU}$ branch retains amplitude $2/3$, the two off-diagonal branches
+carry $-\sqrt{2}/3$, and the opposite-corner branch carries $1/3$.
