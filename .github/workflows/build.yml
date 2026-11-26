@@ -28,7 +28,7 @@ jobs:
           # Only the thesis is built right now.
           # Uncomment a line below to re-enable that doc.
           DOCS=(
-            "thesis-coin-tori"
+            "thesis-coin-tori",
             "sep-coin-tori"
             # "sample-experiment"
             # "sample-labnote"
