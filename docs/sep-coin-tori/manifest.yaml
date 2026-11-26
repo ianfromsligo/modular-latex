@@ -7,8 +7,10 @@ metadata:
     affiliation: Atlantic Technological University, Sligo, Ireland
   - name: Michael Mc Gettrick
     affiliation: University of Galway, Galway, Ireland
-abstract: |
-  \begin{abstract}
+  date: today
+  bibliographystyle: apsrev4-2
+  bibliography: docs/sep-coin-tori/references.bib
+  abstract: |
     A quantum walk revives when it returns to its exact starting state after
     some number of steps ($U^N = I$).  In this paper, we verify the work of
     Dukes on 1D cycles and extend it to toroidal lattices to find and classify
@@ -31,10 +33,6 @@ abstract: |
     because Dukes' original seeding was too constrained to reach them.
     We offer a conjecture, supported by a cyclotomic-field argument, that no cycle
     length other than $\{2, 3, 4, 5, 6, 8, 10\}$ admits an exact revival.
-  \end{abstract}
-date: today
-bibliographystyle: apsrev4-2
-bibliography: docs/sep-coin-tori/references.bib
 sections:
 - title: Introduction
   label: intro
