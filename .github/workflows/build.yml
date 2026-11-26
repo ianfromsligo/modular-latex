@@ -4,6 +4,7 @@ name: Build Documents
   push:
     branches: [main]
     paths:
+      - 'docs/sep-coin-tori/**'
       - 'docs/thesis-coin-tori/**'
       - 'templates/thesis-report/**'
       - 'build.py'
@@ -11,6 +12,7 @@ name: Build Documents
       - '.github/workflows/build.yml'
   pull_request:
     paths:
+      - 'docs/sep-coin-tori/**'
       - 'docs/thesis-coin-tori/**'
       - 'templates/thesis-report/**'
       - 'build.py'
